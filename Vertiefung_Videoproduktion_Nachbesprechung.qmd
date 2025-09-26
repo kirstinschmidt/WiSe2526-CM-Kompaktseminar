@@ -1,0 +1,198 @@
+---
+format:
+  revealjs:
+    auto-stretch: true
+    self-contained: false
+    controls: true
+    slide-number: c/t
+    logo: img/PH_logo.svg
+    theme: [simple, css/custom.scss]
+    fullscreen: true
+    pdf-separate-fragments: true
+    pdfexport: true
+bibliography: references.bib
+csl: apa.csl
+editor_options: 
+  chunk_output_type: console
+lightbox: true
+---
+
+```{r hidden chunk which creates template stuff}
+#| echo: false
+
+## in terminal ########
+# quarto install extension quarto-ext/fontawesome
+# quarto install extension schochastics/academicons
+# test
+
+########################
+library(fontawesome)
+library(tidyverse)
+library(readxl)
+library(ggalt)
+library(hrbrthemes)
+library(reactable)
+
+# Change css to PH green
+if(!dir.exists("css"))
+dir.create("css")
+fileConn<-file("css/custom.scss")
+fileStyle<-file("css/custom.scss")
+writeLines(c("/*-- scss:defaults --*/",
+             "$link-color: #8cd000 !default;",
+             # line-height muss im parent der font-size gesetzt werden,
+             # daher hier und nicht inline im YAML header
+             ".reveal h1 {line-height: .8 !important;} ", 
+             # make citations a bit smaller
+             ".citation {font-size: .8em; color: #8cd000;}",
+             ".imp {color: #8cd000;}",
+             ".imp2 {color: #50B32E;}",
+             ".cent2 h2 {text-align: center;}",
+             ".cent3 h3 {text-align: center;}",
+             ".cent1 h1 {text-align: center;}",
+             ".cent_text {text-align: center;}",
+             ".reveal h2 {color: #8cd000 !important;}"),
+           fileConn)
+close(fileConn)
+close(fileStyle)
+```
+
+## Classroom Management{.cent2}
+<center>
+<font color="#8cd000">Wahlvertiefung: Videoproduktion </font>
+
+![](img/PHKA_logo.png){width="25%"}
+</center>
+
+<center>
+
+<br>  Dr. Kirstin Schmidt <br> 
+
+::: {style="font-size: 0.8em"}
+Pädagogische Hochschule Karlsruhe <br>
+<font color="#50B32E">Wintersemester 2025/2026 </font>
+:::
+
+</center>
+
+::: notes
+
+:::
+
+
+## Was erwartet Sie heute? {{< fa list-ol >}}
+
+- Vertiefung (II)
+    + Wissensaktivierung 
+    + Analyse der eigenen Videos
+    + Gegenseitige Vorstellung der Vertiefungsmöglichkeiten
+- Leistungserbringung 
+- Seminarabschluss
+
+
+
+::: notes
+- Feedback zu Ihrer Analyse erhalten Sie noch
+
+:::
+
+## Geplante Pausen {{< fa mug-hot >}}
+
+> ca. XXX
+
+> vorzeitiges Ende 
+
+## Wissensaktivierung {{< fa repeat >}}
+
+Bearbeiten Sie jeweils den Evertson-Tandembogen und den Kounin-Tandembogen in zwei Durchgängen:
+
+1) Im ersten Durchgang erklären Sie den fettgedruckten Begriff und der/die Partner:in korrigiert/ergänzt.
+2) Im zweiten Durchgang geben Sie ein Positiv- oder Negativbeispiel für jede auf Ihrer Seite nicht fettgedruckte Technik. Der/die Parter:in ordnet dieses Beispiel der Technik zu.
+
+
+<center> {{< fa clock >}} 20 Minuten </center> 
+
+::: notes
+
+- Sie können starten mit was Sie wollen 
+
+:::
+
+<!--
+
+## Gamified Quiz mit arsnova.click {{< fa trophy >}}
+
+https://arsnova.click/quiz/CM-Quiz%20SoSe25
+
+<center> ![](img/arsnova.png){width=40%} </center>
+
+::: notes
+
+ca. 10 Minuten
+
+
+:::
+
+-->
+
+## Analyse der eigenen Videos {{< fa magnifying-glass >}} {.smaller}
+:::{.callout-note collapse=false appearance='default' icon=false}
+## Arbeitsauftrag {{< fa person-digging >}} 
+
+__Teil 1: Analyse Ihres Videos__
+
+Bevor wir ein Video anschauen, erläutert uns die Gruppe, die dieses Video erstellt hat, (nochmals) kurz den ursprünglichen Fall. Anschließend vergleichen wir ...
+
+- ... das Produkt mit den Intentionen der Gruppe.
+- ... den ursprünglichen und adaptierten Fall vor dem Hintergrund des Fachwissens rund um Classroom Management. 
+Wir disktuieren Handlungsalternativen, die ein möglichst effektives Classroom Management erzielen könnten. 
+
+<center> {{< fa clock >}} 60 Minuten </center> 
+
+
+__Teil 2: Vorbereitung auf den Austausch in der Großgruppe__ 
+
+In Kleingruppen stellen Sie und Ihre Kommiliton:innen der Kollegialen Fallberatung sich gegenseitig Ihre Vertiefung vor. Bereiten Sie hierfür einen 15-minütigen Input vor, in welchem Sie
+
+- unser Vorgehen beschreiben
+- Ihren ursprünglichen Fall kurz skizzieren 
+- Ihre inszenierte Handlungsalternative mit Ihren Bezügen zu Classroom Management oder alternativ Ihr Video & Bezüge zu Classroom Management vorstellen
+- Ihr Erleben der Vertiefung reflektieren (z.B. was haben Sie aus der Vertiefung mitgenommen? wie erging es Ihnen bei der Erstellung der Szenen?)
+
+<center> {{< fa clock >}} 10 Minuten </center> 
+
+:::
+
+::: notes
+
+- ca. 10-15 Minuten Negativbeispiel besprechen
+- 
+:::
+
+
+<!-- 
+## Analyseschritte in Anlehnung an Syring (2017) & Kohler et al. (2015) {{< fa video >}}{.smaller .scrollable}
+
+
+
+| Analyseschritt | Mögliche Leitfragen | Beispielantworten |
+|--|----------|----------|
+|1. [__relevante Situationen identifizieren__]{.imp2}| - Welche Situationen sind relevant bzw. interessant vor dem Hintergrund der gewählten Theorie (im Seminar: Classroom Management)? <br>*Tipp: Schauen Sie sich das Video zunächst einmal am Stück an, bevor Sie in der zweiten Runde die relevanten Situationen identifizieren.*| Unterrichtsbeginn|
+2. ausgewählte [__Situation beschreiben__]{.imp2}|Was ist die Ausgangssituation ? (z.B. Was geschieht? Wen sehe ich? Was sehe ich?; Hilfestellung: Standbild) | Schüler:innen sitzen auf ihren Plätzen. Lehrperson steht vor der Klasse. Ein Schüler betritt den Raum. |
+3. [__mögliche Handlungsalternativen (inklusive der Handlung der Lehrperson) erörtern__]{.imp2} | - Wie handelt die Lehrperson? <br> - Welche Handlungen sind noch denkbar? | - Handlungsalternative 1 (tatsächliche Handlung der Lehrperson): Lehrperson unterbricht ihren Unterricht, widmet sich ausschließlich dem Schüler zu. <br> - Sie hält dem Schüler eine ausführliche Standpauke, die insgesamt 20 Sekunden dauert. <br> - Handlungsalternative 2: Die Lehrperson nickt dem zuspätkommenden Schüler zu und spricht ihn nach der Schule an.|
+4.[__Handlungsalternativen erklären__]{.imp2}, insbesondere durch das Anwenden des konzeptuellen [__Wissens zum Thema Classroom Management__]{.imp2} | - Welche Ursachen haben diese Handlungen?  <br> - Welche Konsequenzen haben diese Handlungen? - Welche Merkmale des Classroom Managements werden (nicht) angewendet ? | - Handlungsalternative 1: Da die Lehrperson nur diesem Schüler ihre volle Aufmerksamkeit widmet, ist die Überlappung eingeschränkt (-). <br> - Möglicherweise ist der Schüler schon häufiger zu spät gekommen, obwohl "Pünktlichkeit" als Regel festgelegt ist. Die Lehrperson überproblematisiert das Zuspätkommen und verliert so den Schwung ihres Unterrichts (-). <br> - Handlungsalternative 2: Da die Lehrperson dem Schüler zu nickt und ihre Erklärungen weiterführt, handelt sie überlappend (+). Außerdem verlagert sie das Gespräch auf die Zeit nach dem Unterricht, wodurch Reibungslosigkeit und Schwung gewährleistet ist (+). |
+5. [__Beurteilung/Entscheidung vor dem Hintergrund der Theorie (im Seminar: Classroom Management)__]{.imp2} | Für welche Handlungsalternative würde ich mich entscheiden? Warum? | - Die Handlung der Lehrkraft ist problematisch, da eine effektive Klassenführung gefährdet ist. <br> - Ich würde mich für Handlungsalternative 2 entscheiden, um zentrale Merkmale der Klassenführung - Überlappung, Reibungslosigkeit und Schwung - zu gewährleisten.|
+
+-->
+
+# Ihre Rückfragen zur Modulprüfung / Studienleistung?
+
+# Seminarabschluss
+
+# Vielen Dank und erholsame Semesterferien! {{< fa face-smile >}} {.cent1}
+
+::: notes
+
+- denken Sie an die Abgaben am 01.03.
+ 
+:::

@@ -1,0 +1,1795 @@
+---
+format: 
+  revealjs:
+    auto-stretch: true
+    self-contained: false
+    controls: true
+    slide-number: c/t
+    logo: img/PH_logo.svg
+    theme: [simple, css/custom.scss]
+    fullscreen: true
+    pdf-separate-fragments: true
+    pdfexport: true
+bibliography: references.bib
+editor_options: 
+  chunk_output_type: console
+lightbox: true
+---
+
+```{r hidden chunk which creates template stuff}
+#| echo: false
+
+## in terminal ########
+# quarto install extension quarto-ext/fontawesome
+# quarto install extension schochastics/academicons
+# test
+
+########################
+library(fontawesome)
+library(tidyverse)
+library(readxl)
+library(ggalt)
+library(hrbrthemes)
+library(reactable)
+
+# Change css to PH green
+if(!dir.exists("css"))
+dir.create("css")
+fileConn<-file("css/custom.scss")
+fileStyle<-file("css/custom.scss")
+writeLines(c("/*-- scss:defaults --*/",
+             "$link-color: #8cd000 !default;",
+             # line-height muss im parent der font-size gesetzt werden,
+             # daher hier und nicht inline im YAML header
+             ".reveal h1 {line-height: .8 !important;} ", 
+             # make citations a bit smaller
+             ".citation {font-size: .8em; color: #8cd000;}",
+             ".imp {color: #8cd000;}",
+             ".imp2 {color: #50B32E;}",
+             ".red {color: #A52019;}",
+             ".lightgrey {color: #ECECEC}",
+             ".cent2 h2 {text-align: center;}",
+             ".cent3 h3 {text-align: center;}",
+             ".cent1 h1 {text-align: center;}",
+             ".cent_text {text-align: center;}",
+             ".reveal h2 {color: #8cd000 !important;}"),
+           fileConn)
+close(fileConn)
+close(fileStyle)
+```
+
+## Classroom Management{.cent2}
+<center>
+<font color="#8cd000">1. Kompakttag</font>
+
+![](img/PHKA_logo.png){width="25%"}
+</center>
+
+<center>
+
+<br> 
+Dr. Eva Prinz  & Dr. Kirstin Schmidt <br> 
+
+::: {style="font-size: 0.8em"}
+Pädagogische Hochschule Karlsruhe <br>
+<font color="#50B32E">Wintersemester 2025/2026</font>
+:::
+
+</center>
+
+::: notes
+* herzlich willkommen in der ersten Sitzung
+* heute zuerst kennenlernen und organisatorische Fragen rund um das Seminar klären, bevor wir inhaltlich einsteigen
+
+:::
+
+## Ihre Vorstellung {{< fa user-friends >}}
+
+
+Stellen Sie sich mit Ihrem Namen vor und berichten Sie entweder
+
+- __in welcher [Wimmelfigur]{.imp} Sie sich warum wiedererkennen__. Sie können sich dabei auf Ihren Alltag oder den Hochschulkontext beziehen!
+
+... oder ...
+
+- __ein [positives Erlebnis aus Ihrem Schulpraktikum]{.imp}__.
+
+
+::: notes
+
+* entsprechend anmoderieren, dass es nicht so langweilig wird 
+* erste Person setzt häufig einen Anker, daher kreativ sein: nicht nur wiederholen & sich den Vorgänger:innen anschließen
+* zwischen beiden Möglichkeiten abwechseln 
+    + Erinnern Sie sich an ein besonders positives Ereignis aus Praktikum! Damit ist nicht ein allgemeiner Eindruck des Schulpraxissemesters gemeint, sondern ein ganz spezifisches Ereignis
+    + ein Ereignis jeglicher Art – nicht nur auf den Unterricht bezogen!!- Schildern Sie das Ereignis kurz!
+    + Notizen zu den Erfahrungen machen
+* Am Ende nochmals darauf zurückkommen 
+* 35 Minuten 
+* eine Minute Zeit geben 
+
+- positiv Erlebnisse der Vorstellungsrunde hier einordnen - können Sie Erfahrungen hier einordnen?
+    + __Beziehungsebene__ (konstruktive Unterstützung: positive Rückmeldung von SuS, Sympathie, Dank
+    + __Leistungsebene__ (individueller Leistungsforschritt von SuS, guter Klassendurchschnitt)
+    + __Ebene der Selbstwirksamkeit__ (Unter Selbstwirksamkeit/ Selbstwirksamkeitsüberzeugung (self-efficacy beliefs) versteht die kognitive Psychologie die Überzeugung einer Person, auch schwierige Situationen und Herausforderungen aus eigener Kraft erfolgreich bewältigen zu können ->  Erfolgserlebnisse -> stärken die Selbstwirksamkeit 
+Unterrichtsstunde gelingt besonders gut, Schülerinnen und Schüler können motiviert werden
+    + __außerunterrichtliche Ebene__: Positive Erlebnisse auf Ausflügen, Klassenfahrten, Festen mit Schülerinnen und Schülern, Eltern, Kolleginnen und Kollegen, der Schulleitung 
+    + __Ebene der Nachhaltigkeit:__ Rückmeldung einer ehemaligen Schülerin/ eines ehemaligen Schülers über seinen Ausbildungs- und Berufsweg
+    + __Kollegiale Ebene:__ Anerkennung durch Kolleg:innen oder die Schulleitung
+
+Auf all diesen Ebenen – positive Erlebnisse – Bewusstmachung dessen – Ressourcenorientierung und Positivfokussierung -> wir kennen es alle: halten uns gerne am Negativen auf! -> Für unser psychisches Wohlbefinden ist die Positivfokussierung besonders wichtig!
+
+
+::: 
+
+## Organisatorische Informationen {{< fa list >}}{.smaller}
+
+* Blockzeiten jeweils von 09:00 bis 16:00 Uhr
+    + pro Tag 1,5 h Mittagspause
+    + weitere kleinere Pausen flexibel
+* Bis spätestens Montagnachmittag Ihre Wunschvertiefung in die ausgelegten Listen eintragen
+* Informationsblock zur Studienleistung/Modulprüfung findet am Donnerstag statt
+* __Seminar steht und fällt mit Ihrer Aktivität__
+    + Tag 1 und 2 verschiedene Inputphasen
+    + Tag 2,3 und 4 viele Aktivitätsphasen
+* Eigene Kopfhörer ab Dienstag mitbringen
+* Noch offene Fragen Ihrerseits?
+
+## Geplante Pausen {{< fa mug-hot >}}
+
+> ca. 10:30 Uhr - 10:45 Uhr 
+
+<br> 
+
+> ca. 12:00 Uhr - 13:30 Uhr 
+
+<br> 
+
+> ca. 15:00 Uhr - 15:10 Uhr
+
+## Was erwartet Sie heute? {{< fa list-ol >}} {.smaller}
+
+* Einführung in die Unterrichtsqualität 
+    + Gespräch im Lehrer:innenzimmer
+    + Wozu Forschung zu Unterrichtsqualität?
+    + Begriffsverständnisse
+* Arbeit mit Ihren Unterrichtsfällen
+    + Peer Feedback
+    + Anwendung der Unterrichtsqualität
+* Classroom Management 
+    + Historische Entwicklung
+    + Techniken der Klassenführung nach Kounin
+* Vorstellung der Wahlvertiefung
+
+## Lernziele {{< fa bullseye >}} {.smaller}
+
+* Unterrichtsqualität erklären können
+* Unterscheidung von Oberflächen- und Tiefenstruktur
+* Basisdimensionen des Unterrichts kennen, erklären und anwenden können 
+* Techniken der Klassenführung nach Kounin kennen
+
+# Unterrichtsqualität {{< fa chalkboard-teacher >}} {.cent1}
+
+::: notes
+
+* Heute widmen wir uns der UQ
+
+:::
+
+## Gespräch im Lehrer:innenzimmer {{< fa bullseye >}} {.smaller}
+
+Frau Müller: „Heute haben wir in Mathe wieder Stationenarbeit gemacht. Da war wieder was los in der Klasse. Meinen Fünftklässlern hat‘s eine Menge Spaß gemacht. Und alle waren sie dabei.“
+
+Herr Meyer: „Für mich sind diese neumodischen Methoden ja nichts. Das ist mir viel zu viel Unruhe in der Klasse. Am besten funktioniert es immer noch, wenn ich ein neues Verfahren einführe, dann erkläre ich das für alle an der Tafel und danach wird geübt. Ohne Fleiß kein Preis, sage ich immer! Und in der Schule muss
+eben auch geübt werden.“
+
+Frau Müller: „Aber da langweilen sich die Schüler doch und wer sich langweilt, lernt nichts. Außerdem gilt es doch, die Selbst- und die Methodenkompetenz der Schüler zu fördern. Dies schließt doch ein, dass die Schüler ihr Lernen selbst in die Hand nehmen.“
+
+> __Think-Pair-Share:__ Was sagen Sie zu diesem Gespräch? Hat Frau Müller Recht oder würden Sie doch eher Herrn Meyer zustimmen? - Was ist guter Unterricht?
+
+::: notes
+
+Diskutieren Sie zu zweit oder zu dritt über dieses Gespräch (ca. 10 Minuten)
+Machen Sie sich Notizen (das ist immer hilfreich!) 
+Was ist Stationenlernen?
+Evtl. sind Ihnen solche Gespräche aus dem Praktikum bekannt?
+
+Wie lautet das Fazit ihrer Diskussion? Zu welchem Ergebnis sind sie gekommen?
+
+Ergebnisse/ Notizen evtl. auf einem Flipchart notieren  bereits hier werden Aspekte genannt, die in der späteren Auseinandersetzung mit dem Begriff/ dem Thema Unterrichtsqualität zur Sprache kommen. 
+ 
+
+Mögliche Ergebnisse
+Die Auseinandersetzung bezieht sich auf die Oberflächenmerkmale der Unterrichtsgestaltung
+Welcher Unterricht ist besser? – Hier müssten die tiefenstrukturellen Merkmale von Unterricht betrachtet werden
+ABER auch dann kann noch nicht von besser oder schlechter gesprochen werden  Unterricht kann durch eine sehr effektive Klassenführung gekennzeichnet sein, so dass alle Abläufe reibungslos funktionieren und wenige Störungen auftreten. Die kognitive Aktivierung kann jedoch gering sein, wenn Schülerinnen und Schüler einfache Aufgaben bearbeiten, die nicht zu einem vertieften Nachdenken anregen.
+Lehrpersonen müssen immer inhaltliche Schwerpunkte und didaktische Schwerpunkte setzen: nicht alle Merkmale können die jeweils höchste Ausprägung aufweisen.
+Optimale Ausprägung ist immer eine Frage der Adaptivität (der Passung) – an die Klassenvoraussetzungen (die Klassenzusammensetzung), die einzelnen Schülerinnen und Schüler (deren individuelle Voraussetzungen), das Fach, die Ziele, die ich verfolge…..
+
+Was ist Stationenlernen?
+Beim Stationenlernen sind meistens an verschiedenen Positionen im Raum, den „Lernstationen“, Arbeitsaufträge unterschiedlicher Art ausgelegt, die nacheinander von den Lernenden bearbeitet werden. Die Aufträge stehen in einem thematischen Zusammenhang, können aber in der Regel unabhängig voneinander und in unterschiedlicher Reihenfolge bearbeitet werden. Dadurch erhalten die Lernenden die Möglichkeit, ihren Lernweg entsprechend ihrer Interessen und Fähigkeiten selbst zu steuern. Unterschiede im Lernverhalten einzelner Schüler können so leichter miteinander vereinbart werden.Im Stationenlernen wird durch Art und Auswahl der Aufträge die Vielfalt möglicher Zugänge zum Stoff betont: Alle Sinneskanäle lassen sich durch die Art des ausgewählten Materials und Aufgabenstellungen ansprechen. Auch direktes Handeln kann durch gezielte Aufforderungen für Entscheidungen bei der Aufgabenbearbeitung gefördert werden. Die Methode weist den Lernenden eine aktive und verantwortungsvolle Rolle innerhalb des Lernprozesses zu. Damit steht sie anderen handlungsorientierten Methodennahe. Stationenlernen wird besonders empfohlen zur Vertiefung von Wissen (Lernziel „Kennenlernen“), zur Einübung (Lernziel „Beherrschen“) und im Rahmen von fächerübergreifendem Unterricht. Die vielen Vorzügen werden allerdings nur durch einen hohen Material- und Vorbereitungsaufwand erreicht.
+
+:::
+
+## Gespräch im Lehrer:innenzimmer {{< fa bullseye >}}{.smaller}
+
+* Beide haben Recht und Unrecht – es gibt nicht nur eine Methode des guten Unterrichts!
+* Das Gespräch bezieht sich auf die Oberflächenmerkmale von Unterricht, nicht auf die Tiefenmerkmale.
+* Die Einschätzung einer Methode hat mit den eigenen berufsbezogenen Überzeugungen zu tun.
+
+
+
+## Wozu Forschung zu UQal? {{< fa list-ul >}}{.center}
+
+> Lehrer:innen und Studierende sind immer wieder der Meinung die Frage nach »Merkmalen guten Unterrichts« könne mit dem »Alltagsverstand« genauso beantwortet werden, wie mit Unterrichtsforschung.
+
+> Dazu ein kleines Quiz. Klicken Sie im Innovation Space auf "Quiz: Unterrichtsqualität - eine Frage der Intuition?" um zum Quiz zu gelangen.
+
+::: notes
+-	Lehrer:innen und Lehramtsstudierende sind oft der Meinung, dass man mit dem Alltagsverstand - Erfahrungen, practical wisdom ... - genauso gut wie mit Unterrichtsforschung beantworten kann, was Merkmale guten Unterrichts sind 
+-	starten wir daher mal mit einem kleinen Experiment, warum UQual-Forschung (effective teaching-Perspektive) überhaupt sinnig ist
+
+-	Ergebnisse der Studis anschauen
+-	Schauen wir mal, was die Forschung dazu sagt
+
+::: 
+
+## Wozu Forschung zu UQual? {{< fa list-ul >}} {.scrollable}
+```{r}
+#| echo: false
+#| cache: true
+#| message: false
+#| results: hide
+library(haven)
+library(tidyverse)
+library(ggforce)
+library(hrbrthemes)
+library(ggplot2)
+
+data_star <- read_spss("data/star_math3_per_class.sav") |> 
+  mutate(Klassentyp = case_when(g3classtype == 3 ~ 
+                                "Normale Klasse + Hilfslehrkraft",
+                                g3classtype == 2 ~ 
+                                "Normale Klasse",
+                                T ~ "Kleine Klasse"))
+
+ggsave(
+  "img/STAR.png",
+  ggplot(data_star, aes(Klassentyp, math_per_class)) + 
+    geom_boxplot(width = .2, color = "lightgrey", fill = "darkgrey") +
+    geom_sina(color = "#8cd000") + 
+    theme_modern_rc() + 
+    ylab("Mittelwert Matheleistung je Klasse")+
+    xlab("") +
+    labs(title = "Mathematikleistung",
+         subtitle = "je Klassengröße",
+         caption = "nach drei jahren Unterricht in verschiedener Klassengröße. Daten von   Achilles et al., 1985"))
+
+```
+
+
+::: {style="font-size: 0.5em"}
+* Klassengröße: 
+    * ~~Eine Reduktion der durchschnittlichen Klassengröße von 25 auf 15 steigert die Leistungsfähigkeit der Schüler\*innen deutlich.~~
+    * Im STAR-Experiment [@achilles1985] waren die Effektstärken eher klein: ![](img/STAR.png){width="25%"}
+* Much Pain - no Gain: 
+    * ~~Wenn Schüler\*innen berichten, eine Lernaktivität fühle sich anstrengend an, spricht das dafür, dass diese Lernaktivität nicht optimal adaptiv geplant war.~~
+    * Retrieval Practice wird als viel anstrengender als Restudying empfunden, kann aber als klar lernwirksamer bezeichnet werden [@kirk-johnson2019] 
+* Der Hans machts eh: 
+    * ~~Gruppenarbeit ist meist weniger effektiv als Standardmethoden und fördert auch affektive Outcomes wie Motivation und Emotionen von Lernenden nicht.~~
+    * Eine Review von qualitativ hochwertigen Studien zeigt eine klare Überlegenheit kooperativen Lernens bzgl. affektiver Outcomes. Bzgl. des Lernzuwachses sind »Gruppenziele bei individueller Verantwortlichkeit« notwendige Kriterien für die Überlegenheit [@slavin2010].
+* Lernstile: 
+    * ~~Bedient man den von Schülern bevorzugten VARK Lernstil (visual [V], auditiv [A], read/write [R], kinesthetic [K]) nach Fleming lernen diese mehr.~~
+    * Qualitativ hochwertige Studien  [z.B. @rogowsky2015] finden keine Bestätigung für die »Verzahnungshypothese«.
+
+* Gendern im Unterricht: 
+    * ~~Wenn Lehrer »Schüler« (generisches Maskulinum) sagen, werden weibliche und männliche Personen gleichermaßen adressiert. »Schülerinnen und Schüler« zu sagen ist also eher überkompliziert.~~
+    * Eher das Gegenteil ist der Fall: Der »Malebias« des Generischen Maskulinums ist sogar größer als der »Femalebias« des »Gendersterns« [@korner2022]
+    
+
+:::
+
+::: notes
+
+__Klassengröße__
+
+- STAR (Student-Teacher Achievement Ratio) war eine experimentelle Studie
+- In vier Jahren wurde in Amerika in Tennessee die Effektivität von reduzierten Klassengrößen analysiert 
+  - Mehrere Kohorten: Kindergarten, 1-3, Klasse
+  - Klassengröße 13-17 vs. 22-25 Schüler:innen
+  - Ca. 330 Klassen in ca. 80 Schulen
+  - Lehrpersonen und Schüler:innen wurden jedes Jahr zufällig einer Klasse zugeteilt
+  - Bereiche: Lesen, Mathematik, „basic study skills“
+- kleinerer Klassen kleine positive Effekte auf die Leistung von Schüler:innen gezeigt
+-	Aber wenn Sie sich die Visualisierung anschauen, viel kleinere Effekte als man eigentlich sich das ganze vorstellt
+  - Hier Ergebnis abgetragen und das war noch einer der größten Effekte, der gefunden wurde 
+
+
+__Much Pain – no Gain__
+
+-	retrieval practice / "Abrufpraxis": Informationen auslassen, um Sie selbst abzurufen z.B. Materialien einmal durcharbeiten und dann ein Quiz bearbeiten; Vokablen einmal durchlesen und dann abdecken; Lückentexte
+-	Forschung zeigt, dass durch retrieval practice Lerninhalte längerfristig behalten werden können (Lerninhalte gelangen ins Langzeitgedächtnis) bzw. länger als bei restudying (Materialien mehrfach durcharbeiten) 
+  - während restudying ein passives Lesen erfordert, 
+  - ist für die retrieval practice eine aktive Gedächtnissuche erforderlich - eine kognitiv anstrengende Aufgabe
+
+
+__Gendern im Unterricht__
+
+-	Tatsächlich Male Bias
+-	Argumentiert, dass bei Gendersternchen eher ein Female Bias, aber wurde gezeigt, dass der Male Bias größer ist als der Female Bias
+-	am ausgewogensten waren die Darstellungen, wenn sowohl männliche als auch weibliche Formen genannt wurden
+- wie wird das untersucht: mentale Geschlechterdarstellungen/-repräsentationen, die beim Lesen hervorgerufen werden z.B. zwei Sätze und die Teilnehmenden sollen entscheiden, ob der zweite Satz eine plausible Fortsetzung des ersten Satzes ist. Im ersten Satz wird eine Gruppe an Menschen in Gender-Schreibweise, generischem Maskulinum oder in Beidnennung, im Folgesatz wird dann Bezug zu Männern/Frauen aus der Gruppe hergestellt
+
+__Der Hans machts eh__
+
+-	Überlegenheit kooperativen Lernens bezüglich affektiver Outcomes 
+  - Kooperatives Lernen verbessert diese fast immer
+  - Beispiele: Studierende arbeiten gerne in Gruppen (lieber als alleine), fühlen sich dann erfolgreicher etc.
+-	Aber um positive Effekte auf die Leistung zu erzielen, müssen Gruppenziele und individuelle Verantwortlichkeit vorliegen
+  - Gruppenziele und individuelle Verantwortlichkeit (Erfolg der Gruppenarbeit ist abhängig von jedem einzelnen Gruppenmitglied) als Mediatorvariable
+  - Hier geht es auch immer darum, dass die Schüler:innen etwas lernen
+  - Alternative: gleiche Aufgabe gemeinsam bearbeiten (nicht unterschiedliche Verantwortlichkeiten festlegen); Fokus eher auf „etwas machen“ statt „etwas lernen“  z.B. schwächere Schüler:innen werden eher als Störfaktor und nicht als Hilfe angesehen
+-	Zusatzinfos: Schüler:innen, die am meisten in GA lernen sind diejenigen, die Erklärungen geben/erhalten; auch high-achievers profitieren von GA
+
+
+__Lernstile__
+
+-	Studien finden keine Bestätigung für Lernstile, die über alle Fächer hinweg zu besseren Leistungen führen
+- Kogowsky und Kolleg:innen (2014) fokussierten auditory and visual learning style
+
+
+-	Was schließen wir daraus: unser Alltagsverstand kann uns doch auch immer in die Irre führen
+-	Lassen Sie uns jetzt die Eigenschaften von wissenschaftlichem Wissen und praktischem Wissen / Handlungswissen noch einander gegenüberstellen, die jeweiligen Eigenschaften und die damit einhergehenden Vor- und Nachteile anschauen
+
+
+::: 
+
+
+## Wiss. Wissen & Handlungswissen {.smaller}
+#### Charakteristika
+* Wissenschaftliches Wissen: Formal, explizit, propositional, diskursiv [@habermas2014]
+* Praktisches Wissen: Implizit, »embodied in action« [@massingham2019]
+<br><br>
+
+
+#### Resultierende Vor- und Nachteile
+{{< fa circle-plus >}} wiss. Wissen: Hoher Gültigkeitsanspruch, breiter anwendbar (generisch) <br>
+{{< fa circle-plus >}} prakt. Wissen: Schnell generierbar, unmittelbar anwendbar<br>
+<br>
+{{< fa circle-minus >}} wiss. Wissen: Aufwändige Genese, begrenzte Modi der »Verwendbarkeit« <br>
+{{< fa circle-minus >}} prakt. Wissen: Geringer Gültigkeitsanspruch, hochgradig spezifisch
+
+::: notes
+
+Wissenschaftliches Wissen: 
+
+- __Formal__: z.B. Mathe Physik, aber auch z.B. Jura/Medizin vergleichsweise klar definierte Begriffe/Sprache
+- __Explizit__: jede Kleinigkeit wird ausgedrückt, es wird vermieden zwischen den Zeilen zu sprechen // Konnotationen werden vermieden, nur was publiziert ist zählt
+- __Propositional__: Claims werden möglichst in Aussagen (Proposition Konklusion) verpackt. z.B. "Wenn Lernende einen zuvor gelesenen Text versuchen aktiv zu reproduzieren, steigt ihre Behaltensleistung im Vergleich zu nochmaligem Lesen" statt "ich hab den Eindruck ..."
+- __Diskusiv__: Wissenschaft gilt Wissenschaft, wenn ihre Ergebnisse in der Fachöffentlichkeit diskutiert wurden (Konferenzen, Publikationen mit Stellungnahmen ...)
+
+Praktisches Wissen:
+
+- __Implizit__: Man muss im LuL Alltag so viele Entscheidungen treffen, dass man nicht alle "bewusst" treffen kann - viel läuft automatisiert ab. Thinking slow - thinking fast, um hervorzuheben, dass das nicht negativ gemeint ist, sondern sehr hilfreich/notwendig, um Komplexität zu reduzieren
+- __embodied in action__: Kann nicht kognitiv manifestiert werden. Wechsel in Muttersprache, keine Spitznamen, bestimmte Position in Klassenzimmer
+
+- Bsp. für __Generik wiss. Wiss.__: CTML (wann Bild, wann Text, wann bewegtes Bild) in Präsenz- und Distanzunterricht
+  - aber aufwendig in der Genese, vielzählige Forschungsprojekte 
+  - begrenzt anwendbar -> aus dem Allgemeinen müssen erst einmal die spezifischen Infos z.B. Highlighting von Texten ist sinnvoll, abgeleitet werden
+- __Unmittelbar anwendbar__: Bsp.: Namen lernen
+  - aber hochgradig spezifisch
+- Geringer Gültigkeitsanspruch: Mythen ..
+
+- daher nun noch stärker mit UQ aus Forschungsperspektive
+
+:::
+
+
+## Begriffsverständnisse (I) {{< fa chalkboard-teacher >}} 
+
+::: {style="font-size: 0.6em"}
+<center>![Struktur nach Berliner (2005)](img/berliner4.png){width="200"}</center>
+
+* Eine vglw. breite Definition nach Klieme (2019, S. 396):
+*»Unterrichtsqualität wird hier also verstanden als [Gesamtheit der empirisch beobachtbaren Merkmale des Unterrichtsgeschehens {{< fa eye >}}]{style="color: #d77d00;"}, die nachweislich mit der [Entwicklung der Lernenden im Sinne der Realisierung von Bildungs- und Erziehungszielen {{< fa chart-line >}}]{style="color: #0FA5D7;"} einhergehen.«*
+* Im Kontext aktueller empirischer (insb. deutschsprachiger) Forschung {{< fa eye >}}
+    + wird meistens die [Leistungsentwicklung]{style="color: #0FA5D7;"} als Kriterium fokussiert (Kunter & Trautwein, 2013)
+
+:::
+
+::: notes
+
+
+* UQ nach Berliner
+    + Dieser Einteilung nach besteht UQ aus gutem Unterricht / „good teaching“ und effektivem Unterricht „effective teaching“
+    + Die Idee stammt von David Berliner (amerikanischer Päd. Psych.) und hier ein wenig ausgebaut
+    + Good teaching: hierbei geht es darum sich Gedanken zu machen, __was denn eigentlich erreicht werden soll__
+    + Effective/succesful teaching hingegen prüft, __inwiefern ein festgelegtes Ziel erreicht wird__
+    + __Outcomes von good teaching sind der Didaktik und der theoretischen Erziehungswissenschaft zuzuordnen__
+    + Didaktische Modelle wie das Hamburger oder Berliner Modell oder so etwas wie das EEE-Schema, das für Einstieg, Erarbeitung und Ergebnissicherung steht, aber auch Unterrichtstheorien usw.
+    + Outcomes von __effective teaching__ stammen eher aus der __Pädagogischen Psychologie__:
+    + Qualitätskriterien, __Merkmale im Unterricht, die positiv mit Leistung von Schüler:innen zusammenhängen__ z.B. nach Hilbert Mayer – Strukturierung des Unterrichts, time on task, Klima
+    + __Wirkmodelle nennen nicht nur die Kriterien, sondern beschreiben die Prozesse dahinter__ z.B., kognitive Aktivierung (aktive Auseinandersetzung und vertiefte Beschäftigung mit den Lerngegenstände) = Qualitätskriterium
+        + Wirkmodell: offene Aufgaben wirken kognitiv aktivierender weil Lernende nicht ein Ritual abspulen können, sondern wirklich das zu Verstehende elaborieren/durchdenken müssen
+        + Angebot-Nutzungs-Modell = Wirkmodell
+    + Qualitätsvoller Unterricht integriert beide Seiten:
+    + „Direkte Instruktion“: zeigt sich konsistent lernwirksam in Bezug auf fachliche Lernziele, genügt somit den Kriterien effektiven Unterrichts, entspricht jedoch u.a. aufgrund der starken Lehrersteuerung nicht den aktuellen pädagogischen Vorstellungen guten Unterrichts
+
+
+* Neuere UQualforschung fast ausschließlich unter effective Perspektive
+* Eckhard Klieme definiert UQ relativ breit 
+    * = Konstrukt:  nicht direkt beobachtbarer Sachverhalte
+    * muss aus anderen, leichter beobachtbaren Sachverhalten (Indikatoren) erschlossen werden (= Operationalisierung) 
+    * Definition: Unterrichtsqualität = Bündel solcher empirisch identifizierter Merkmale, die sich nachweislich positiv auf die Unterrichts- und Erziehungsziele auswirken – Zielfestlegung normativ
+    * Kontext aktueller empirischer Forschung: 
+    * Fokus Leistungsentwicklung -> Wenn __nicht nur Leistungsentwicklung__ betrachtet wird, nennt man das oft eine __multikriteriale Perspektive auf Unterrichtsqualität__ (typisches Beispiel: Sehr starke, autoritäre Engführung im Unterricht kann sehr lernwirksamsein ist aber autonmieeinschränkend und damit motivationsentwicklungshinderlich; Deci and Ryan Selbstbestimmungstheorie (Autonomie, Fähigkeit, Zugehörigkeit))
+* Unterrichtsqualität
+    * Keine endgültig abgeschlossene Liste an Merkmalen, nicht ein erfolgreiches methodisches Vorgehen. 
+    * Definition muss offen bleiben -> müssen LuL aushalten.
+  
+::: 
+
+## Begriffsverständnisse (II) {{< fa chalkboard-teacher >}}
+
+::: {.column width='33%'}
+#### Listen {{< fa list-check >}}
+* z.B. Meyer (2021)
+    * Strukturierung
+    * Time on Task
+    * Klarheit
+    * Methodenvielfalt
+    * Intel. Üben
+    * ...
+
+:::
+
+::: {.column width='33%'}
+#### Dimensionen {{< fa ruler-combined >}}
+* z.B. Klieme (2019)
+    * Klassenführung
+    * Konstruktive Unterstützung
+    * Kognitive Aktivierung
+
+:::
+
+::: {.column width='33%'}
+#### Stufen {{< fa stairs >}}
+* z.B. Pietsch (2010)
+
+![](img/Pietsch_Stufenmodell.png){width="500"}
+:::
+
+
+
+::: notes
+
+- Verschiedene Modelle von UQ
+  - Listen, die gar nichts über das Verhältnis der Merkmale aussagen, suggerieren oft eine dichotome Ausprägung (vorhanden vs. nicht vorhanden)
+  - Stufen, die eine Hierarchie vorschlagen, also systematisch aufeinander aufbauen von Lernklima bis zur Differenzierung, und dadurch auch bissl heuristischer sind.
+    - Die Stufung ist nicht kausal zu verstehen: Eine effiziente Klassenführung führt nicht automatisch zu einer guten individuellen Förderung, aber sie erhöht die Wahrscheinlichkeit, dass diese gelingt
+    - umkehrt: Es ist unwahrscheinlich, dass es gelingt, individuelle Voraussetzungen von Schüler:innen im Unterricht angemessen zu berücksichtigen, wenn es Schüler:innen nicht möglich ist, Lernstrategien zu erwerben oder anzuwenden
+    - auf Stufe zwei ist es für eine Schule nicht realistisch kurzfristig eine weitreichende „Individualisierung“ des Unterrichts anzustreben (Stufe 4), aber es wäre realistisch ein Konzept zu entwickeln für eine umfassende Einbeziehung der Schüler:innen in die Gestaltung des Unterrichts
+- Dimensionen schon kennengelernt
+
+Fokus: Forschung entwickelt sich weiter     
+- Jahreszahlen kommentieren ->  Neuauflage
+- von Listen über Dimensionen zu Stufenmodell
+  - Kritik an Liste, Addition und unterschiedliche Abstraktionsniveaus 
+  - Dimensionen ein ähnliches Abstraktionsniveau, keine Abhängigkeit
+  - Liste Abhängigkeiten
+  
+:::
+    
+    
+## Begriffsverständnisse: Basisdimensionen {{< fa chalkboard-teacher >}}
+
+::: {style="font-size: 0.6em"}
+* ... 
+* Im Kontext aktueller empirischer (insb. deutschsprachiger) Forschung {{< fa eye >}}
+    + wird meistens die [Leistungsentwicklung]{style="color: #0FA5D7;"} als Kriterium fokussiert  (Kunter & Trautwein, 2013);
+    + werden meistens sog. generische Tiefenstrukturen als Unterrichtsmerkmale betrachtet (Praetorius et al., 2018)
+        * [Klassenführung]{style="color: #d77d00;"} (classroom management)
+        * [Konstruktive Unterstützung]{style="color: #d77d00;"} (student support)
+        * [Kognitive Aktivierung]{style="color: #d77d00;"} (cognitive activation)
+<center> ![](img/Eisberg.png){width="200"} </center>
+
+:::
+
+::: notes
+* Basisdimensionen - Tiefenstruktur
+  * __Klassenführung__ mit dem Ziel, __time on task__ zu erhöhen, also Unterrichtszeit effektiv zu nutzen, möglichst __wenige Störungen und alle Schüler:innen beim Lernen beteiligt__ sind
+  * __Konstruktive Unterstützung__: wie gut __unterstützt Lehrperson__ die Lernenden beim Wissenserwerb + __Wertschätzung und Respekt bei Interaktion__ zwischen Lehrperson und Lernenden 
+  * __Kognitive Aktivierung__: __aktive Auseinandersetzung__ und __vertiefte Beschäftigung__ mit den Lerngegenstände
+  * Tiefenstrukturen kennzeichnen sich dadurch, dass sie nicht direkt beobachtbar sind
+  * Direkt beobachtbar sind nur Oberflächenstrukturen - methodisches Vorgehen, Organisations- und Sozialformen
+
+* __spezifisch CM. widmen__, werden Sie in den kommenden Sitzungen merken, 
+  * Ältere CM-Forschung bereits effective Persp. zuzuordnen -> Leistung nicht Kriterium, sondern Störungsfreiheit/Mitarbeit, Fehlverhalten
+  * Jüngere CM-Forschung effektive Perspektive mit Kriterium Leistung
+
+
+Zeitpuffer:
+Implikation der Definiton:
+
+* __Oberfläche weder hinreichend noch notwendig__ (»Kooperatives Lernen« kann aber muss kein guter Unterricht sein) -> Zentral, die drei Ks zu adressieren, das kann ich unter Verwendung verschiedener Methoden
+* __UQual entsteht aus Kokonstruktion von Klasse und LuL__: Störungsfreiheit als Submerkmal von __Klassenführung wird manchmal komplett schülerseitig induziert__ (brave Klasse) -> Rolle Klasse. Aber __ein und dieselbe Klasse stört je nach Lehrkraft sehr unterschiedlich stark__ -> Rolle Lehrkraft.
+
+:::
+
+## Vertiefung {{< fa chalkboard-teacher >}}
+
+> Vertiefen Sie die Inhalte nochmals mit Ihrer Sitznachbarin/Ihrem Sitznachbarn und diskutieren Sie dabei auch Ihre Fragen, die Sie an den Text von Drechsel & Schindler (2019) gestellt haben.
+
+<center> 10 Minuten {{< fa clock >}} </center>
+
+# Arbeit an Ihren Fällen {{< fa file-lines >}}{.cent1}
+
+> „Ein Fall ist eine exemplarische Schlüsselsituation pädagogischen
+Handelns“ (Goeze & Hartz, 2010)
+
+## Peer-Feedback Aufgabe {{< fa user-group >}}
+
+::: {style="font-size: 0.65em"}
+Tragen Sie sich Ihre Fallbeschreibungen gegenseitig vor und geben Sie sich dabei Rückmeldung zu den folgenden Aspekten:
+
+* Der Fall ist gemäß der Gliederung (auch in der vorgegebenen Reihenfolge; Beschreibung der Situation, vorauslaufende Ereignisse und Erlebnisse, situationsspezifische Bedingungen, anschließende Folgehandlungen und Konsequenzen) strukturiert und für jeden Gliederungspunkt sind Informationen gegeben.
+* Die Situation ist so konkret wie möglich verschriftlicht, z.B. auch mit wörtlicher Rede (was wurde gesprochen?).
+* Die Kontextfragen sind beantwortet (s. Foliensatz der Vorbesprechung).
+* Die Beschreibung der Situation ist durchgängig beschreibend und nicht wertend oder interpretierend.
+* Es werden keine Handlungsalternativen generiert. 
+
+Überarbeiten Sie - falls notwendig - Ihre Fallbeschreibung und laden Sie diese überarbeitete Version in Innovation Space unter "Ihr herausforderndes Ereignis (überarbeitet)" hoch.
+
+<center> 30 Minuten {{< fa clock >}} </center>
+
+:::
+
+::: notes
+
+- Partner:innenarbeit
+- Zuteilung: Falls Sie Schwierigkeiten hatten mit dem Aufschreiben, jemandem der die Generirung leicht gefallen ist z.B. suchen sie sich jemand, der viel Kontextinfos etc hat ´
+
+:::
+
+
+## Basisdimensionen in Ihren Fällen {{< fa sitemap >}} {.smaller .scrollable}
+
+__Teil 1: Betiteln Sie Ihren Fall__
+
+* Suchen Sie einen passenden Titel für Ihren Fall.
+* Schreiben Sie Ihren Titel auf eine Karte. 
+
+
+__Teil 2: Anwendung der Basisdimensionen__ 
+
+* Sie haben als Vorbereitung auf die Kompaktveranstaltung Texte zu den Basisdimensionen gelesen. Um Ihr Wissen zu aktivieren, bearbeiten Sie das Quiz "Zuordnung: Basisdimension (KKK) <-> Item im Unterrichtsfeedbackbogen". Dieses finden Sie im Innovation Space unter "Themenblock 1: Unterrichtsqualität".
+* Welche Basisdimensionen kommen in Ihrem Fall zum tragen? Gibt es eine dominante Dimension? 
+* Notieren Sie wenige Stichpunkte für die Vorstellung. Vergessen Sie dabei nicht zu begründen, warum Sie sich für welche Basisdimension(en) entschieden haben.
+
+<center> ca. 20 Minuten für Teil 1 und Teil 2 {{< fa clock >}} </center>
+
+__Teil 3: Vorstellung & Clusterung Ihres Falles__
+
+* Stellen Sie Ihren Fall inklusive Ihrer Zuordnung zu den Basisdimensionen in zwei bis drei Sätzen vor.
+* Gemeinsam clustern wir Ihre Fälle hinsichtlich der Basisdimensionen.
+
+
+::: notes
+
+PAUSE
+
+:::
+
+
+# Classroom Management {{< fa users >}} {.cent1}
+
+## Komplexität des Unterrichts {{< fa layer-group >}}
+
+„Aushalten können“ der komplexen Anforderungen im Klassenzimmer <br> 
+&rarr; wichtige Bedingung für Classroom Management (Syring 2017, S.22) <br>
+&rarr; CRM muss erlernt werden und bildet sich erst im Verlauf des Berufslebens heraus! <br>
+&rarr; CRM = „spezifische Expertenkompetenz“ → Erfahrene Lehrpersonen und Novizen unterscheiden sich darin deutlich! <br> 
+&rarr; Für Novizen häufig eine belastende Anforderung
+
+
+::: notes
+
+- Wir können die Komplexität nicht auflösen, sie uns aber bewusst machen -> und Strategien / Merkmale / Techniken etc. von CRM können uns behilflich sein damit umzugehen. 
+
+
+- Motivation: CM wird von Novizen als Herausforderung wahrgenommen
+  - kann erlernt werden
+  - einer der zentralsten Prädiktoren für Schüler:innenlernen
+  - wichtiger Faktor um Belastungserleben entgegen zu wirken 
+  - Strategien erlernen, um mit Komplexität umzugehen
+  
+
+:::
+
+
+## Classroom Management: Historische Entwicklung {{< fa arrow-rotate-left >}}
+
+::: {style="font-size: 0.50em"}
+
+__1. Classroom Management als reaktiver Umgang mit Störungen__
+
+- Mittelpunkt der Verantwortlichkeit: Lehrperson
+- Ziel: Disziplin zu erhalten und wiederherzustellen, um reibungsloses Lernen zu ermöglichen &rarr; Fokus auf Modifikation des individuellen Verhaltens 
+- Vorgehensweise: Verstärkung durch z.B. Belohnungen, Lob, Tadel und Sanktionen (Behaviourismus)
+
+::: {.fragment} 
+__2. Classroom Management als proaktiver Umgang mit Störungen__
+
+- Wende durch Kounin Ende der 1970er
+- Mittelpunkt der Verantwortlichkeit: Lehrperson
+- Ziel: Prävention von Störungen &rarr; Fokus auf Lerngeschehen in der Gruppe
+
+:::
+
+::: {.fragment} 
+__3. Lernerzentriertes Classroom Management__
+
+- Wandel seit 1990er: großer Beitrag durch Evertson, Weinstein und Brophy 
+- Mittelpunkt der Verantwortlichkeit: Lehrperson und Schüler:innen
+- Ziel: Förderung der Selbständigkeit und Selbstregulation im Aneignen von Lernstoffen bei Schüler:innen; gemeinsame Verantwortung bei Konflikten
+
+:::
+
+:::
+
+
+::: notes
+
+- noch eine historische Entwicklung des Begriffs der letzten mehr als 15 Jahre darlegen
+
+* traditionell amerikanischer Begriff
+* Allgemein: Entwicklung von einem lehrerpersonen- hin zu einem lernerzentrierten Classroom Management
+
+* in den Anfängen war der Behavioursmus dominant und es ging darum auf das individuelle Verhalten eines Schülers / einer Schülerin zu reagieren
+  * konkret bedeutet das, dass Hinweisreize Schüler:innen mitteilten, ob bestimmte Verhaltensformen in bestimmten Situationen erwünscht oder unerwünscht waren
+  * Verhaltenssteuerung im Unterricht mittels Belehrungen und Sanktionen 
+  * positive Verstärkung: Schüler:innen loben und negative Verstärkung 
+  * Löschung und Bestrafung z.B. mit dem Nachsitzen drohen
+  * Störungen liegen in der "Persönlichkeit" der Schüler:innen
+  
+* in den 1970er Jahren eine Wende, in dem es eher darum ging präventiv Störungen zu vermeiden und auch die ganze Gruppe zu fokussieren; hauptverantwortlich Lehrperson
+* Fokus verändert sich - es geht nicht mehr um die Frage, was tue ich wenn, sondern was tue ich damit nicht ... 
+* Bisher wurde die Störung des Unterrichts dem Schüler bzw. der Schülerin zugeschrieben (»Schüler als Störfaktor«), nun wurde die Störung als ein Problem in der Lehrer-Schüler-Beziehung bzw. der Interaktion betrachtet
+
+
+* mittlerweile werden auch die Schüler:innen stärker in Verantwortung gezogen
+  * Förderung der Selbständigkeit und Selbstregulation im Aneignen von Lernstoffen bei Schüler:innen
+  * gemeinsame Verantwortung bei Konflikten
+
+* wir fokussieren uns heute auf die erste Wende des Begriffsverständnis
+::: 
+
+
+## Classroom Management: Historische Entwicklung {{< fa arrow-rotate-left >}}
+
+::: {style="font-size: 0.50em"}
+
+__1. Classroom Management als reaktiver Umgang mit Störungen__
+
+- Mittelpunkt der Verantwortlichkeit: Lehrperson
+- Ziel: Disziplin zu erhalten und wiederherzustellen, um reibungsloses Lernen zu ermöglichen &rarr; Fokus auf Modifikation des individuellen Verhaltens 
+- Vorgehensweise: Verstärkung durch z.B. Belohnungen, Lob, Tadel und Sanktionen (Behaviourismus)
+ 
+[__2. Classroom Management als proaktiver Umgang mit Störungen__]{.imp2}
+
+- [Wende durch Kounin Ende der 1970er]{.imp2}
+- [Mittelpunkt der Verantwortlichkeit: Lehrperson]{.imp2}
+- [Ziel: Prävention von Störungen &rarr; Fokus auf Lerngeschehen in der Gruppe]{.imp2}
+ 
+__3. Lernerzentriertes Classroom Management__
+
+- Wandel seit 1990er: großer Beitrag durch Evertson, Weinstein und Brophy 
+- Mittelpunkt der Verantwortlichkeit: Lehrperson und Schüler:innen
+- Ziel: Förderung der Selbständigkeit und Selbstregulation im Aneignen von Lernstoffen bei Schüler:innen; gemeinsame Verantwortung bei Konflikten
+
+
+:::
+
+
+::: notes
+
+- warum?
+- Pionier der Forschung um Classroom Management, auf der auch heute Forschung zu Classroom Management aufbaut
+- als Ausblick: in der übernächsten Sitzung werden wir uns noch näher mit dem neueren Paradigma des lernerzentrierten Classroom Managements befassen
+::: 
+
+# Kounin (1970) Techniken der Klassenführung <br> {{< fa wrench >}} {.cent1}
+
+
+
+## Jacob S. Kounin{{< fa user >}}
+
+* 1912-1995
+* amerikanischer pädagogischer Psychologe
+* Pionier des Konzepts Classroom Management 
+* Vorfall in eigener Hochschullehre als Ausgangspunkt seiner Forschung rund um Classroom Management
+
+
+::: notes
+
+- Die Ergebnisse seiner Untersuchungen beeinflussen bis heute die Vorstellungen eines guten Classroom Managements
+- Vorfall mal näher anschauen
+
+:::
+
+
+## Ausgangspunkt der Forschung {{< fa user >}}
+
+<center>
+![](img/Kounin_2006_Der Zwischenfall.jpg){width="600"}
+
+<br> (Kounin, 2006, S.17)
+</center>
+
+
+::: notes
+
+* Wellen-Effekt: "Wirkung (...), die eine Zurechtweisung bei anderen in der Klasse hinterläßt" (Kounin, 2006, S.17)
+* diesen Wellen-Effekt wollte Kounin untersuchen
+* herausfinden, ob es Disziplinierungstechniken gibt, die besonders effektiv für das Gruppenverhalten sind
+* Fokus lag also auf *Unterrichtsstörungen*
+
+
+:::
+
+## Arbeitsweise von Kounin (I) {{< fa user >}}
+
+::: {style="font-size: 0.5em"}
+
+__[Durchführung verschiedener Studien mit unterschiedlichen Methoden und Stichproben]{.imp2}__
+
+__1. Schwerpunkte der Forschungstätigkeiten: Disziplinierungsmaßnahmen__
+
+- Forschungsfragen:
+  - Wie gehen Lehrpersonen mit Störungen im Unterricht um? 
+  - Beeinflussen Zurechtweisungsmethoden die Schüler:innenreaktionen (Einstellungen und sichtbares Verhalten)? 
+  - Unterscheiden sich verschiedene Methoden (z.B. Klarheit, Festigkeit, Härte) in ihrer Wirkung?
+- Beantwortung der Forschungsfragen mittels verschiedener Studien
+  - __College-Experiment__
+  - __Vorschulstudie__
+  - __Feriencamp-Studie__: Fallstudien während und Interviews am Ende des Camps
+  - __Interview-Studie__
+  - __High-School-Studie__: Interviews zu mehreren Messzeitpunkten, Fragebogen, experimentelle Studie
+
+[&rarr; keine konsistenten Ergebnisse, sondern unterschiedliche Auffassungen von schlechtem Verhalten je nach Kontext (Zuhause, Schule oder Feriencamp)]{.imp2} <br>
+
+:::
+
+::: notes
+
+- Kounin war also auf der Suche nach einer möglichst "perfekten" Ermahnung
+- verglich verschiedene Maßnahmen zur Bestrafung und Sanktionierung
+- hierfür führte er unterschiedliche Studien durch
+  - am College
+  - in der Vorschule 
+  - im Ferienlager
+  - und an der Highschool
+- Forschungsergebnisse überraschend, da Ergebnisse inkonsistent waren
+- **keine Zurechtweisungsmethoden, die über alle Kontexte hinweg effektiv waren**
+  - Kounin stellte zum einen fest, dass es einen Unterschied machte, ob man Pädagog:innen zum ersten Mal erlebte und sich also eher einen ersten Eindruck verschaffte (wie z.B. in den experimentellen Studien) oder schon eine Beziehung zu diesen aufgebaut hatte
+  - zum anderen waren die Motivation für das Unterrichtsfach und die Zuneigung/Sympathie zur Lehrperson weitere Einflussfaktoren
+  - allerdings konnten Kounin und Kolleg:innen eine negative Wirkung konsistent über alle Kontexte feststellen: Verärgerung und Bestrafung wirkten sich negativ auf das Verhalten der Schüler:innen / Kinder aus z.B. führte es zu Unbehagen
+  
+  
+  
+- Beantwortung der Forschungsfragen mittels verschiedener Studien
+  - __College-Experiment__: experimentelle Manipulation der Zurechtweisung eines Studierenden; Fokus auf Welleneffekt
+  - __Vorschulstudie__: Beobachtungsstudie; Fokus auf Zurechtweisungsarten von Lehrpersonen und den Schüler:innenreaktionen 
+  - __Feriencamp-Studie__:
+    - Fallstudien während des Feriencamps; Fokus auf Zurechtweisungsarten von Campleiter:innen und Reaktionen der Kinder
+    - Interviews am Ende des Feriencamps; Fokus auf Einstellungen der Kinder zu schlechtem Verhalten im Camp
+  - __Interview-Studie__: Interviews zu Schule und Elternhaus; Fokus auf Einstellungen von Grundschulkindern zu schlechtem Verhalten Zuhause und in der Schule
+
+  - __High-School-Studie__: 
+    - Interviews zu mehreren Messzeitpunkten; Fokus auf XX 
+    - Fragebogen; Fokus, ob Lernmotivation die Zuneigung zur Lehrperson bestimmte
+    - experimentelle Studie mit experimenteller Manipulation der Lernmotivation und der Zurechtweisungsmethode; Fokus XXX
+    
+  
+ausführliche Infos zu den Studien - ich weiß nicht, ob wir die wirklich brauchen: 
+
+zur Forschungsfrage 2: Hat die Methode der Lehrperson, mit welcher schlechtem Verhalten von Schüler:innen begegnet wird, irgendwelche Folgen für die Art und Weise, in der die anderen Schüler:innen auf den entsprechenden Vorfall reagieren? 
+
+- College-Experiment: Zurechtweisung mit destruktivem Charakter + konstruktivem Charakter an einen Zuspätkommer, der in das Experiment eingeweiht war &rarr; u.a. Einstellungen zu Dozierenden + Schweregrad gewisser schlechter Betragsformen vor und nach Intervention erfassen; Aufklärung über Intervention + Fragebogen zur Glaubwürdigkeit des Zurechtweisungsvorfalls und wie sie diesen aufgenommen hatten
+- Vorschulstudie: Beobachtung von Zurechtweisungsfällen in Vorschule in Form von schriftlichen Protokollen &rarr; Zurechtweisungen liesen sich nach Klarheit (Menge der Information), Festigkeit (Grad der Ernsthaftig- und Flüchtigkeit) und Härte (Grad an Zorn und Gereiztheit) kategorisieren
+- Feriencamp-Studie: Fallstudien mit vollständigen und objektiven Verhaltensprotokollen; Untersuchungsschema wie zuvor
+- Interview-Studie (gleiche Fragen wie in Feriencamp-Studie) bezogen auf Schule und Elternhaus
+:::
+
+## Arbeitsweise von Kounin (II) {{< fa user >}}
+
+::: {style="font-size: 0.5em"}
+
+__2. Neue Methode: Die Videoaufzeichnungen und -analysen:__
+
+- Forschungsfragen: 
+  -  Inwieweit haben Zurechtweisungsmethoden Einfluss auf Schüler:innenreaktionen? (wie in den vorherigen Forschungstätigkeiten)
+  - Unterscheiden sich verschiedene Methoden (z.B. Klarheit, Festigkeit, Härte) in ihrer Wirkung? (wie in den vorherigen Forschungstätigkeiten)
+- Methoden:
+  - Videoaufzeichnungen
+  - Videoanalysen
+
+[&rarr; "die Methoden des Umgangs mit schlechtem Betragen (...) [sind] keine signifikanten Determinanten (...) dafür, wie gut oder schlecht sich Kinder in der Klasse aufführen oder wie erfolgreich ein Lehrer verhindert, daß schlechtes Betragen eines Kindes auf andere Kinder übergreift" (Kounin, 2006 S.82)]{.imp2}
+:::
+
+
+::: notes
+
+- Forschungsfragen beibehalten, dieses Mal aber mit einer anderen Methode 
+  - da u.a. Protokollführung problematisch für Wahrnehmung eines Menschen: man kann nicht alles wahrnehmen -> selektive Wahrnehmung
+  - daher Videoaufzeichnungen von natürlichen Unterrichtssituationen
+- Analysen der Videos; Vorteil: umfassendere Wahrnehmung, da Videos mehrfach abgespielt werden können
+- aber hier: kein Zusammenhang zwischen der Qualität der Zurechtweisungen und der Schüler:innenreaktion
+  - Zurechtweisungen liesen sich nach Klarheit (Menge der Information), Festigkeit (Grad der Ernsthaftig- und Flüchtigkeit) und Härte (Grad an Zorn und Gereiztheit) kategorisieren
+    - Ein beiläufiges »Lass das« ist ein Ausdruck für eine geringe Festigkeit in der Diszplinierung. Eine hohe Festigkeit ist dadurch gekennzeichnet, dass der Lehrende nachdrängt und den fokussierten Schüler ansieht, bis das störende Verhalten eingestellt wird
+    - Härte - böse Blicke oder Strafen androhen
+- Ergebnisse führten zu Veränderung des Forschungsschwerpunktes
+
+:::
+
+
+## Arbeitsweise von Kounin (III) {{< fa user >}}
+
+::: {style="font-size: 0.5em"}
+
+__3. Ein Umdenken: Fokus der Forschungstätigkeiten auf Klassenführung__
+
+<center> 
+[__Klassenführung "als die Beschäftigung des Lehrers mit dem äußerlich sichtbaren Verhalten von Schülern, für welches offene Anzeichen von Mitarbeit und Fehlverhalten maßgeblich waren" (Kounin, 2006, S.148)__]{.imp2}
+</center>
+
+Forschungsfrage:
+
+- Korrelieren Verhaltensweisen von Lehrpersonen mit der Mitarbeit von Schüler:innen, der Fehlverhaltensrate von Schüler:innen, der Ansteckung durch Fehlverhalten und der Effektivität von Zurechtweisungen?
+
+- Methoden:
+  - Videoaufzeichnungen
+  - Videoanalysen
+  
+<br> 
+[&rarr; "(...) in der Tat [existieren] ganz bestimmte Verhaltensweisen von Lehrern (...), die mit dem Führungserfolg korrelieren (...). Solche Dimensionen des Lehrerverhaltens, die auf das Schülerverhalten zurückwirkten, stellten sich (...) u.a. dar als: *Allgegenwärtigkeit* (...), *Überlappung* (...), *Reibungslosigkeit der Übergänge* (...); (...) Programmierung von *abwechslungsreichem Lernen* bei der Stillarbeit" (Kounin, 2006, S.85)]{.imp2}
+  
+:::
+
+::: notes
+
+- Fokus nun stärker auf einer Klassenführung im Allgemeinen, nicht nur Fokus auf Disziplinierungsmaßnahmen
+- zusätzlich wurde **nicht nur Fehlverhalten analysiert, sondern auch Mitarbeit**
+- erneut Videoanalysen
+- es zeigten sich folgende Ergebnisse: vorlesen
+
+- abschließendes Kommentar aus forschungsmethodische Sicht: Arbeiten von Kounin von besonderer Qualität und erfüllen viele Kriterien, die aktuell für die Bildungsforschung eingefordert werden (Raudenbush, 2005; Seidel & Shavelson, 2007)
+  - verschiedene Methoden: Beobachtungen, experimentelle Untersuchungen, Befragung mittels Fragebogen und Interviews, Videoanalysen (Aufzeichnung und Auswertung)
+  - verschiedene Stichproben: Vorschulbereich, Schule und Hochschule
+  - auch wenn Stichproben klein und andere statistische Auswertung mittlerweile herangezogen würden
+
+
+- schauen wir uns nun die einzelnen Techniken näher an
+- hier sollen Sie aktiv werden
+
+:::
+
+
+
+## Arbeitsauftrag: Techniken der Klassenführung {{< fa wrench >}}
+::: {style="font-size: 0.4em"}
+1. Allgegenwärtigkeit und Überlappung (Haag & Streber, 2020, S. 68-69; mögliche Vertiefung: Kounin, 2006, S.89 (unten) - S.100)
+2. Reibungslosigkeit und Schwung (Haag & Streber, 2020, S. 69-70;  mögliche Vertiefung: Kounin, 2006, S.101-116)
+3. Aufrechterhaltung des Gruppenfokus: Gruppenmobilisierung (group alerting), Rechenschaftsprinzip (encouraging accountability) und Beschäftigungsradius (High participation formats; Haag & Streber, 2020, S. 71-72; mögliche Vertiefung: Kounin, 2006, S.117-130)
+4. Programmierte Überdrussvermeidung (Haag & Streber, 2020, S.72-74; mögliche Vertiefung: Kounin, 2006, S.131-143) 
+:::
+
+<br>
+
+::: {style="font-size: 0.50em"}
+
+
+| Arbeitsschritte       | Auftrag                                         |
+|----------------------|----------------------------------------------------|
+| 1. Arbeitsschritt (15 Minuten) | Lesen Sie die Ihnen zugewiesene Textpassage in Stillarbeit. Achtung alle Texte befinden sich in derselben Datei! |
+| 2. Arbeitsschritt (10 Minuten) |- Klären Sie in Ihrer Expert:innengruppe Fragen rund um die zugeteilte Technik. <br> - Erläutern Sie die Technik in Ihren eigenen Worten und tragen Sie anschließend Ihre eigene Definition in die entsprechenden Zellen im Tabellenmuster ein.  <br> - Dieses Muster finden Sie im Innovation Space unter "Tabellenvorlage" in der Sitzung "Classroom Management - Einführung in Kounin". Laden Sie die Word-Datei herunter. Tragen Sie als Gruppe Ihre Definition ein und wählen Sie eine Person aus, die die Tabelle mit Ihrer Definition wieder hochlädt. |
+| 3.  Arbeitsschritt (20 Minuten) | Präsentieren Sie sich in der Stammgruppe die jeweiligen Techniken.                                       |
+
+:::
+
+::: notes
+
+- nach Aktivität 20 Minuten Pause
+- je nach Quelle etwas unterschiedliche Bezeichnungen
+
+- am Ende: dies bedeutet nicht -> mach guten Unterricht dann gibts keine Störungen
+
+- Allgegenwärtigkeit: Fähigkeit Schüler:innen mitzuteilen, dass man als Lehrperson über ihr Verhalten informiert ist;
+- Überlappung: Fähigkeit, bei gleichzeitig auftretenden Problemen beiden simultan die Aufmerksamkeit (Bemerkung, Anweisung oder Blick) zuzuwenden, nebnbei bearbeiten
+  - Fokus liegt nicht darauf, wie eine Lehrperson mit den Problemen fertig wird, ob er sie erfolgreich/erfolglos, klug oder unklug anging
+-> Allgegenwärtigkeit und Überlappung korrelieren; Allgegenwärtigkeit > Überlappung  
+
+- **Reibungslosigkeit:** Fähigkeit, den Unterrichtsablauf bei **Übungen und an Übergangsstellen** steuern; Gegensatz = Sprunghaftigkeit
+  - Reizabhängigkeit: behält Lehrperson Unterrichtsziel im Auge oder lässt er/sie sich leicht ablenken?
+  - Unvermitteltheiten: "Hineinplatzen" der Lehrperson in die Beschäftigungen der Schüler:innen; kein externer Reiz, sondern geht von Lehrperson selbst aus
+  - thematische Inkonsequenzen: Thema nicht abschließen, zu einem anderen Thema wechseln, bevor altes Thema abgeschlossen wird
+  - Verkürzungen: Thema wird nicht abgeschlossen, aber auch nach Themenwechsel nicht mehr aufgegriffen
+  - thematische Unentschlossenheit: Tätigkeit beenden, neue Tätigkeit starten und nochmals zur beendeten Tätigkeit zurückkommen
+- **Schwung:** Gegensatz = Verzögerungen durch Lehrverhalten **verlangsamen Arbeitsprozesse**
+  - Überproblematisierung von Benehmen, Verhaltenselementen, Arbeitsmitteln und Lehrstoff: übermäßiger Handlungs- oder Redestrom, der für das Verständnis der Schüler:innen nicht notwendig gewesen wäre und teilweise die Fortführung der Arbeit verhindert
+  - Fragmentierung: Lehrperson verursacht einen Zerfall einer Lernaktivität in verschiedene Teile, obwohl sie als geschlossene Einheit durchgeführt werden könnte 
+   - Gruppen-Fragmentierung: einzelne Gruppenmitglieder sollen etwas alleine/separat tun, obwohl die Gruppe dies gemeinsam hätte tun können -> kann zu Wartezeit für einzelne Schüler:innen kommen
+   - Fragmentierung von Handlungseinheiten: sinnvolle Handlungseinheit wird in Teilkomponenten zerlegt, die dann auch separat betrachtet werden
+-> Schwung und Reibungslosigkeit korrelieren; Schwung > Reibungslosigkeit   
+
+- Gruppenmobilisierung: Fähigkeit, Gruppenfokus zu wahren; Gegensatz: völliges Aufgehen in Beschäftigung mit einem/einer Schüler:in
+  - Verhaltensweisen der Lehrperson um nicht aufgerufene Schüler:innen aufmerksam zu halten
+  - Rechenschaftspflicht: Fähigkeit, in Erfahrung zu bringen, womit sich Schüler:innen tatsächlich beschäftigen und mitzuteilen, dass man über ihr Tun informiert ist; aufgerufene Schüler:innen zeigen, was sie können/wissen und müssen durch das Aufrufen Rechenschaft ablegen
+  - Beschäftigungsradius: welche Arbeitsanforderung wird an die Schüler:innen gestellt bzw. wie stark sind die Arbeitsanforderungen an die Schüler:innen, wenn ein/e Schüler:in gerade aufgerufen wurde
+-> Gruppenmobilisierung > Beschäftigungsradius; Korrelation. zwischen Rechenschaftsprinzip und Gruppenmobilisierung, aber Gruppenmobilisierung > als Rechenschaftsprinzip
+
+- Überdrussvermeidung fokussiert Eigenart der Unterrichtsaktivitäten; Überdruss = veränderte Valenz einer Tätigkeit aufgrund von Wiederholung
+  - Messung nur über indirekte Hinweise möglich: Dauer der Aktivitäten (korrelierten nicht mit Mitarbeit und Fehlverhalten); Routine, positive und negative Merkmale -> kaum Varianz, Mehrheit Routine
+  - Valenz und intellektuelle Herausforderung: Fähigkeit, Überdrusserscheinungen zu begegnen, z.B. mittels Verstärkung der Attraktivität oder des Herausforderungscharakters von schulischen Aktivitäten (Begeisterung, Arbeitsbereitschaft, Neugierde wecken)
+  -> positive Valenz erfolgreich für Stimulierung von Mitarbeit und Eindämmung von Fehlverhalten; schwache Korrelationen zwischen Valenz, Herausforderung und Schülerverhalten
+
+- Abwechslung und Herausforderung bei der Stillarbeit: Fähigkeit, Lernaktivitäten mit Abwechslung und intellektuellem Herausforderungscharakter zu gestalten
+  -> Abwechslung korreliert mit Schüler:innenverhalten in Stillarbeit, nicht aber in Übungsphasen
+
+:::
+
+<!--
+
+## Vertiefung der Techniken {{< fa wrench >}}{.smaller}
+
+| Beispiel 1       | Beispiel 2                                      |
+|---|---|
+|Frau G. beginnt ihren Unterricht mit der Besprechung der Hausaufgaben. Max hat seine Hausaufgaben nicht gemacht. Er erhält eine zweiminütige Strafpredigt wegen wiederholten Vernachlässigens seiner Hausaufgaben. | Herrn M. fällt während des Unterrichts ein, dass er noch Kopiergeld einsammeln muss. Der Vorgang dauert mit der anschließenden Beruhigung der Schülerinnen und Schüler etwa zehn Minuten.
+|
+<center> Kiel, Frey & Weiß (2016; S. 82) </center>
+
+
+::: {.fragment}
+<br> 
+<br> 
+&rarr; Unterrichtsfluss wird erst dann zum Thema, wenn er nicht vorhanden ist. <br>
+&rarr; Positivbeispiele fallen in der Unterrichtsbeobachtung eher weniger auf. <br>
+&rarr; Führt dazu, dass die Gesamtklasse in ihrem Aufmerksamkeitsstrom unterbrochen wird, d.h. sie muss mit dem Aufnehmen der eigentlichen Aufgabe wieder neu fokussiert werden.
+:::
+
+::: notes
+
+- Beides alltägliche Beispiele, in denen die Lehrperson den Unterrichtsfluss unterbricht (durch Zuwenden zu einer anderen Aufgabe oder durch Zuwendung zu einem einzelnen Schüler)
+- … Unterrichtsfluss wird erst dann zum Thema, wenn er nicht vorhanden ist -> Positivbeispiele fallen in der Unterrichtsbeobachtung eher weniger auf -> Führt dazu, dass die Gesamtklasse in ihrem Aufmerksamkeitsstrom unterbrochen wird, d.h. sie müssen mit dem Aufnehmen der eigentlichen Aufgabe wieder neu fokussiert werden.
+
+:::
+
+
+## [Vertiefung: Reibungslosigkeit und Schwung {{< fa wrench >}}]{style="color:black;"} {background-image="img/Fluss.png"}
+
+
+::: {.fragment} 
+Welche Stolpersteine, Äste, Nebenflüsse verhindern den Strom meines Unterrichts? Machen Sie sich dazu Notizen in Stichworten
+
+:::
+
+<br> 
+
+::: {.fragment} 
+Wie viel eigener Anteil steckt in den Steinen im Fluss? Wie viele Steine könnten durch präventive strukturierende Maßnahmen minimiert werden? Sortieren Sie in der Diskussion in Ihrer Gruppe Ihre Stolpersteine nach dem Grad der möglichen persönlichen Einflussnahme.
+
+:::
+
+
+
+::: notes
+
+Sie alle wissen sicherlich, wie man eine Stunde aufbauen sollte, um den Unterrichtsfluss aufrecht zu erhalten -> doch gibt es immer wieder,
+Die Unterbrechungen, Steine, Nebenflüsse, Äste … ,die den Strom unterbrechen -> die Reibungslosigkeit, den Schwung....
+
+…diesen Steinen, Ablenkungen, Unterbrechungen möchten wir uns jetzt zuwenden
+
+Notieren Sie zunächst für sich alleine typische Situationen,…. die den Unterrichtsfluss stören (5 Minuten)
+
+
+legen sie diese dann in den Fluss und diskutieren sie ihre Ergebnisse.
+
+-- Rundgang zu den anderen Gruppen (Museumsrundgang)
+-> zurück zur eigenen Gruppe
+
+Was unterstützt den Unterrichtsfluss?
+
+:::
+
+
+## [Vertiefung: Reibungslosigkeit und Schwung {{< fa wrench >}}]{style="color:black;"} {background-image="img/Fluss.png"}
+
+::: {style="font-size: 0.50em"}
+
+::: {.column width='50%'}
+__1. Orientierungssicherheit__
+
+- klare Ziele formulieren
+- Leistungserwartungen transparent machen
+- Wechsel von Aktivitäten ankündigen
+- Strukturierungshilfen nutzen
+- an Interessen, Vorwissen, Erwartungen von SuS orientieren
+- Rituale
+    
+__2. Klarheit im mündlichen Ausdruck__
+
+- akustisch (Verstehbarkeit)
+- sprachlich (Prägnanz, Wesentliches, Gliederungsordnung, Einfachheit)
+- inhaltlich (Kohärenz)
+- fachlich (Korrektheit)
+
+:::
+
+::: {.column width='50%'}
+
+__3. Verständlichkeit im mündl. Ausdruck__
+
+- Lautstärke
+- Tonhöhe
+- Sprechgeschwindigkeit
+- Pausen
+- Artikulation
+- Modulation
+- Gestik
+- Mimik
+- Sprachregister (Dialekt, Soziolekt, Standardsprache)
+
+__4. Unterschiedliche Arbeitstempi der SuS berücksichtigen__
+
+__5. Gesamtaktivität der Klasse ermöglichen__
+
+:::
+
+:::
+
+::: {style="font-size: 0.70em"}
+:::{.fragment}
+{{< fa triangle-exclamation >}} Notieren Sie sich den Stolperstein oder den Ast, der für Sie am wichtigsten ist. {{< fa triangle-exclamation >}}
+
+:::
+:::
+
+
+::: notes
+Zurück zum Fluss: Notieren sie sich den Stolperstein oder den Ast, der für sie am wichtigsten ist – oder nehmen sie sich das Kärtchen mit….
+
+…diesen Steinen, Unterbrechungen möchten wir uns jetzt zuwenden
+
+- Erinnerung an Entscheidung für Vertiefung
+
+:::
+
+--> 
+
+# Vorstellung der Wahlvertiefung{.cent1}
+<br> 
+
+<center> 
+
+1. Kollegiale Fallberatung
+2. Videoproduktion
+
+</center>
+
+## Videoproduktion: Anforderungen an das Produkt {.smaller .scrollable}
+
+* Sie produzieren ein Video, in welchem Sie 
+    + sich mindestens auf einen Ihrer Fälle beziehen und eine Handlungsalternative im Sinne der Classroom Management Merkmale nach Kounin oder Evertson exemplarisch demonstriert ... und ...
+    + sich mindestens eine weitere Situation überlegen, in der ein Classroom Management Merkmale nach Kounin oder Evertson (in positiver oder negativer Ausführung) inszeniert wird
+    
+* Das Video dauert ca. 3 Minuten bis max. 5 Minuten
+* Das Video wird auf Grundlage eines detaillierten Skripts eingesprochen
+* Die Hauptrollen im Video werden von der jeweiligen Gruppe selbst bestritten; Nebenrollen übernehmen Ihre Kommiliton:innen, d.h. alle spielen in allen Videos mit
+* Erstellen Sie zwei Skriptversionen
+  + Variante 1: Infos anführen, an welcher Stelle Sie welche Merkmale der Klassenführung darstellen 
+  + Variante 2: verblindet, d.h. hier erwähnen Sie *nicht* welche Klassenführungstechnik(en) Sie darstellen. 
+  
+## Ablauf der Aufnahmetage {.smaller}
+* Gruppe baut Raum um (max. 3 Minuten)
+* Briefing (5 Minuten)
+  * Gruppe verteilt die Skripte an Kommiliton:innen
+  * Gruppe verteilt Rollen und brieft die Kommiliton:innen bzgl. dieser entlang des Skripts
+* Take I (max. 5 Minuten)
+* Verbesserungsvorschläge an die Rollen (2 Minuten)
+* Take II (max. 5 Minuten)
+
+
+## Beispielskript
+
+{{< pdf img/Beispielskript.pdf width=100% height=800 >}}
+
+
+## Kommentare Ihrer Kommiliton:innen
+
+::: {style="font-size: 0.65em"}
+> "Abschließend kann ich sagen, dass wir als Gruppe, trotz anfänglicher Bedenken bezüglich des Schauspiels, der Videoaufnahme und sich selbst im Video zu sehen, Spaß hatten das Video zu erstellen und unsere Bedenken unberechtigt waren." 
+
+<br> 
+
+> "Dies war eine nicht einfache Aufgabe hat aber viel für die Zukunft gebracht. Ich bin mit allen Aufgabenbereichen sehr zufrieden von der Gruppenarbeit über zum Skript hin zum Videodreh und würde es genauso im Seminar beibehalten, damit die nächsten Kommilitonen auch so dazulernen können."
+
+<br>
+
+> "Zusammenfassend lässt sich sagen, dass das Projekt „Videoerstellung“ eine gelungene
+Möglichkeit ist, theoretische Inhalte zum Classroom Management nach Kounin und Evertson
+durch praktische Handlungen umzusetzen. Durch eine gezielte Inszenierung sowohl positiv
+als auch negativer Merkmale, wird eine tiefe Auseinandersetzung mit der Thematik ermöglicht."
+:::
+
+# Vielen Dank!{.cent1}
+
+::: notes
+
+Erinnerung Anmeldung im Metaportal
+
+:::
+
+
+## (weiterführende) Literatur {{< fa book-open >}}{.scrollable}
+
+::: {style="font-size: 0.6em"}
+
+Haag, L., & Streber, D. (2012). *Klassenführung: Erfolgreich unterrichten mit Classroom Management*. Beltz.
+
+Kounin, J. S. (2006). *Techniken der Klassenführung* (M. Gellert & C. Gellert, Übers.). Waxmann.
+
+Seidel, T. (2020.). Klassenführung. In E. Wild & J. Möller, J. (Hrsg.). *Pädagogische Psychologie*. Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61403-7
+
+Seidel, T., & Shavelson, R. (2007). Teaching Effectiveness Research in the Past Decade: The Role of Theory and Research Design in Disentangling Meta-Analysis Results. *Review of Educational Research, 77*, 454–499. https://doi.org/10.3102/0034654307310317
+
+
+Syring, M. (2017). Classroom Management: Theorien, Befunde, Fälle - Hilfen für die Praxis. Vandenhoeck & Ruprecht.
+
+
+Internetquellen: <br>
+
+Kurzzusammenfassung von Kounin (2006) Techniken der Klassenführung:  https://www.youtube.com/watch?v=7n76_BRAvz8
+
+
+Podcast Psychologie fürs Klassenzimmer, Folge Kounin (1970) | Unterrichtsstörungen: https://open.spotify.com/episode/0GOxzUf00abMESU1dAJL2u?si=1XO09gmuTxqlj1dBbJq6wQ
+:::
+
+
+
+
+## Classroom Management{.cent2}
+<center>
+<font color="#8cd000">2. Kompakttag</font>
+
+![](img/PHKA_logo.png){width="25%"}
+</center>
+
+<center>
+
+<br> 
+Dr. Eva Prinz  & Dr. Kirstin Schmidt <br> 
+
+::: {style="font-size: 0.8em"}
+Pädagogische Hochschule Karlsruhe <br>
+<font color="#50B32E">Wintersemester 2025/2026 </font>
+:::
+
+</center>
+
+::: notes
+* herzlich willkommen zum 2. Kompakttag
+
+:::
+
+## Geplante Pausen {{< fa mug-hot >}}
+
+> ca. 10:30 und 10:45 Uhr 
+
+<br> 
+
+> Mittagspause von ca. 12:30 Uhr bis 14:00 Uhr
+
+## Was erwartet Sie heute? {{< fa list-ol >}}
+
+* Einführung in die Analyse von Unterrichtsvideo
+  + Potenziale und Herausforderungen
+  + Einführung in die Analyseschritte 
+  + Durchführung von Videoanalysen
+* Classroom Management 
+  + Einführung in die Classroom Management-Merkmale nach Evertson
+  + Anwendung der Classroom Management-Merkmale nach Evertson
+
+
+## Lernziele {{< fa bullseye >}}
+
+* Potenziale und Herausforderungen im Umgang mit Unterrichtsvideos kennen
+* Grundlegende Herangehensweisen videobasierter Reflektion anwenden können
+* Techniken der Klassenführung nach Kounin kennen und anwenden können
+* Merkmale des Classroom Managements nach Evertson und Kolleg:innen kennen und anwenden können 
+* Verschiedene Verständnisse von Classroom Management kontrastieren können
+
+# Einführung in die Analyse von Unterrichtsvideos {{< fa video >}}{.cent1}
+
+
+
+## Arbeitsauftrag {{< fa users >}}
+
+<br>
+<br> 
+
+Diskutieren Sie in zwei Minuten mit Ihrer Nachbarin / Ihrem Nachbarn folgende Frage: <br> <br>
+
+[__Welche Potenziale und Herausforderungen sehen Sie im Umgang mit Unterrichtsvideos für Ihr Studium?__]{.imp2}
+
+
+::: notes
+
+
+::: 
+
+
+## Potenziale und Herausforderungen von Unterrichtsvideos {{< fa plus >}}
+
+::: {style="font-size: 0.6em"}
+[__Potenziale__]{.imp2} <br> 
+
+* Unterrichtsvideos sind realitätsnahe und machen Unterrichtsprozesse in ihrer Komplexität und Variabilität sichtbar. 
+* CM-Kompetenz setzt sich aus theoretischem Wissen über CM und der praktischen Umsetzung von CM zusammen, Förderung muss also beide Komponenten adressieren
+&rarr; Lernen mit Unterrichtsvideos fördert u.a. die Analysekompetenz und erlaubt eine Integration von theoretischem Wissen über CM in Praxissituationen <br>
+(vgl. Syring et al 2013b, S.83f.)
+
+
+[__Herausforderungen:__]{.imp2} <br> 
+
+* Tendenz zum Beurteilen des Unterrichts
+* Begrenzheit durch Inszenierung und Kameraführung
+* begrenzte Kontextinformationen
+<br>
+(z.B. Krammer & Reusser, 2005)
+
+:::
+
+::: notes 
+
+Theorie-Praxis-Verknüpfung als Problem der Lehrer:innenbildung (Oser, 2001; Terhart, 2000)
+
+Als größtes Hindernis für den Theorie-Praxis-Transfer: Komplexität des Unterrichtsgeschehens….!
+
+Reflection in action daher oft nicht möglich;  reflection on action (nachträglich)
+
+
+Potenziale:
+
+- erfolgreiches Classroom-Management benötigt eine kontinuierliche Reflexion des eigenen Handelns; hierfür Analyse von Unterrichtsprozessen notwendig
+- Analyse von Unterrichtsprozessen erlernbar z.B. mittels Fallarbeit
+  - Videos als eine Möglichkeit von Fallarbeit
+  - Videos realitätsnahe, machen komplexes Unterrichtsgeschehen sichtbar
+  - ermöglicht beides: Förderung des theoretischen Wissens, aber erlaubt auch an die Fähigkeit - praktische Umsetzung -  ran zu kommen
+
+Herausforderungen:
+
+- man neigt schnell dazu den Unterricht zu beurteilen - guter / schlechter Unterricht
+- natürlich auch begrenzt: relalitätsnahe, aber Kameraführung oder Inszenierung Limitation
+- fehlende Kontextinformationen
+
+
+
+
+- primäres Ziel: Förderung der Analysekompetenz
+  - "Fähigkeit der Lehrperson zur Beobachtung, theoriegestützten Herleitung, Anwendung und kritischen Reflexion pädagogischer und fachdidaktischer Aushandlungs- und Interaktionsprozesse in Unterricht und Schule bezogen auf konkrete Fragestellungen" (Syring et al. 2013) &rarr; Voraussetzung für Reflexionsfähigkeit
+
+
+::: 
+
+
+## Einführung in die strukturierte Analyse von Unterrichtsvideos {{< fa video >}}
+
+<br>
+<br>
+<center> 
+*Es existieren unterschiedlich ausführliche Anleitungen zur Analyse von Unterrichtsvideos, aber gemein haben alle den folgenden Dreischritt: <br> Unterrichtsituation [1) beschreiben, 2) erklären und 3) bewerten]{.imp2}.* <br>
+(vgl. z.B. Seidel & Prenzel, 2008; Schwindt, 2008; Syring et al. 2013; Syring, 2017)
+</center>
+
+::: notes
+- verschieden ausführliche Anleitungen zur Analyse von Unterrichtsvideos, aber gemein haben alle einen Dreischritt von 
+  - differenzierter Beschreibung der Unterrichtssituation
+  - erklären der Situation vor dem Hintergrund theoretischer Modelle des Lehren und Lernens
+  - Bewertung und Einordnung der Situation
+- 3-Schritt: nicht nur normative Setzung, sondern eröffnet neue Perspektiven, wenn man Bewertung zurück hält 
+
+- verwandte Begrifflichkeiten: wissenschaftliche Beobachtung; professionelle Wahrnehmung, professional vision etc.
+
+:::
+
+## Analyseschritte in Anlehnung an Syring (2017) & Kohler et al. (2015) {{< fa video >}}{.smaller .scrollable}
+
+
+
+| Analyseschritt | Mögliche Leitfragen | Beispielantworten |
+|--|----------|----------|
+|1. [__relevante Situationen identifizieren__]{.imp2}| - Welche Situationen sind relevant bzw. interessant vor dem Hintergrund der gewählten Theorie (im Seminar: Classroom Management)? <br>*Tipp: Schauen Sie sich das Video zunächst einmal am Stück an, bevor Sie in der zweiten Runde die relevanten Situationen identifizieren.*| Unterrichtsbeginn|
+2. ausgewählte [__Situation beschreiben__]{.imp2}|Was ist die Ausgangssituation ? (z.B. Was geschieht? Wen sehe ich? Was sehe ich?; Hilfestellung: Standbild) | Schüler:innen sitzen auf ihren Plätzen. Lehrperson steht vor der Klasse. Ein Schüler betritt den Raum. |
+3. [__mögliche Handlungsalternativen (inklusive der Handlung der Lehrperson) erörtern__]{.imp2} | - Wie handelt die Lehrperson? <br> - Welche Handlungen sind noch denkbar? | - Handlungsalternative 1 (tatsächliche Handlung der Lehrperson): Lehrperson unterbricht ihren Unterricht, widmet sich ausschließlich dem Schüler zu. <br> - Sie hält dem Schüler eine ausführliche Standpauke, die insgesamt 20 Sekunden dauert. <br> - Handlungsalternative 2: Die Lehrperson nickt dem zuspätkommenden Schüler zu und spricht ihn nach der Schule an.|
+4.[__Handlungsalternativen erklären__]{.imp2}, insbesondere durch das Anwenden des konzeptuellen [__Wissens zum Thema Classroom Management__]{.imp2} | - Welche Ursachen haben diese Handlungen?  <br> - Welche Konsequenzen haben diese Handlungen? - Welche Merkmale des Classroom Managements werden (nicht) angewendet ? | - Handlungsalternative 1: Da die Lehrperson nur diesem Schüler ihre volle Aufmerksamkeit widmet, ist die Überlappung eingeschränkt (-). <br> - Möglicherweise ist der Schüler schon häufiger zu spät gekommen, obwohl "Pünktlichkeit" als Regel festgelegt ist. Die Lehrperson überproblematisiert das Zuspätkommen und verliert so den Schwung ihres Unterrichts (-). <br> - Handlungsalternative 2: Da die Lehrperson dem Schüler zu nickt und ihre Erklärungen weiterführt, handelt sie überlappend (+). Außerdem verlagert sie das Gespräch auf die Zeit nach dem Unterricht, wodurch Reibungslosigkeit und Schwung gewährleistet ist (+). |
+5. [__Beurteilung/Entscheidung vor dem Hintergrund der Theorie (im Seminar: Classroom Management)__]{.imp2} | Für welche Handlungsalternative würde ich mich entscheiden? Warum? | - Ich würde mich für Handlungsalternative 2 entscheiden, um zentrale Merkmale der Klassenführung - Überlappung, Reibungslosigkeit und Schwung - zu gewährleisten.|
+
+::: notes
+
+optional, gerade bei fremden Videos wie in der Hausarbeit: Kontextinformationen 3. Stunde, zuvor große Pause etc. nennen
+
+Beschreiben der Ausgangssituation vergleichbar mit einem Querschnitt durch das Video - Standbild
+
+Handlungsalternativen startet mit dem Handeln d. Lehrperson
+
+Erklären Ursachen und Konsequenzen 
+
+5-Minuten PAUSE
+
+:::
+
+## Unterrichtssequenz analysieren {{< fa file-pen >}}{.scrollable}
+
+::: {style="font-size: 0.5em"}
+> Plenum <br>
+1. Videoausschnitt aus "Der Fall Daniel" gemeinsam anschauen. <br>
+2. Welche Sequenzen würden Sie für eine Videoanalyse auswählen? <br> 
+3. Wie beschreiben Sie die ausgewählte Situation? Fügen Sie die Beschreibung in die Tabelle ein. Diese brauchen Sie zu einem späteren Zeitpunkt. <br> 
+4. Erörtern möglicher Handlungsalternativen. Listen Sie die Handlungsalternativen in der Tabelle auf.
+
+> Einzelarbeit: <br>
+5. Öffnen Sie die Aktivität "Videoanalyse: Der Fall Daniel" im Innovation Space. Nutzen Sie gerne auch die Datei "Techniken der Klassenführung - ein Überblick". Erklären Sie gemäß des vierten Analyseschritts "Erklären" (F.46) die Unterrichtssituation, die wir gemeinsam beschrieben haben. Greifen Sie dabei auch auf die Techniken der Klassenführung nach Kounin zurück. Halten Sie Ihre Teilanalyse im in __der Tabellenvorlage__ fest und laden Sie diese hoch.
+
+> Plenum <br> 
+6. Sammlung der Erklärungen <br> 
+7. Begründete Entscheidung für eine Handlungsalternative vor dem Hintergrund der Techniken der Klassenführung.
+
+:::
+
+::: notes
+
+<!-- 
+- Fragmentierung - Schwung
+- etwas später beim Lied starten 
+- singen einmal gemeinsam und dann in Kanon eingeteilt bei 19:24 starten bis ca. 13:30 stoppen (Zeit läuft ab)
+
+- Einstieg - Ritual: Singen
+    - 1. Phase bis ca. 19:25 -16:21
+    - Steffi wir hatten was ausgemacht -> Allgegenwärtigkeit gegeben; x Reibungslosigkeit und Schwung - Überproblematisierung; Überlappung x; Trick / Gruppenarbeit -> Überdrussvermeidung
+        - alle Arbeiten: Gruppenmobilisierung (teilweise Arbeitsaufträge verteilt)
+        - präsentieren wäre Teil Rechenschaftsprinzip
+- 2. Situation
+    - AA: Einführung 19:24 - 14:30
+    - Gruppenarbeit 14:30 - 13:30
+        - Überlappung: teile der Materialien austeilen während Gruppen arbeiten, gleichzeitiges Arbeiten ggf. nicht möglich (schwer erkennbar)
+- unbedingt Notizen bei Beschreibung machen
+
+- HA: Digitalisierung z.B. PPP mit AA verwenden -> eine mögliche Handlungsalternative, die aber keine weiteren / anderen Techniken der Klassenführung adressiert. 
+--> 
+
+20-MINUTEN PAUSE
+::: 
+
+
+## Ihr Arbeitsauftrag {{< fa pen >}}{.scrollable}
+
+::: {style="font-size: 0.57em"}
+
+1. Schauen Sie sich zunächst __die ersten 45 Minuten__ des Unterrichtsvideos __"Geographie - 7. Klasse - In den Savannen (Klassenperspektive)"__ in Ruhe und für sich an ohne dabei einen der Analyseschritte (vgl. F. 46) durchzuführen. Das Unterrichtsvideo finden Sie im Metaportal "unterrichtsvideos.net". Achten Sie dabei darauf, dass Sie das Video auswählen, das aus der __Klassenperspektive__ gedreht wurde. Um das Video abzurufen, müssen Sie sich im Metaportal einloggen und im Portal auf "Videosuche" klicken. Folgende Angaben können Ihnen die Suche erleichtern:
+
+- Nutzergruppe: Lehramtsstudierende
+- Ort: Sonstige Universität
+- Suchbegriff: In den Savannen
+
+*Hinweis: Das Video wird ggf. nicht von Safari unterstützt, verwenden Sie also am besten einen anderen Internetbrowser.* <br>
+
+2. Wählen Sie gemeinsam in der Gruppe __1 Szene des Unterrichtsvideos__ aus, die Sie gemäß der im Seminar formulierten Analyseschritte analysieren (vgl. Folie 46). *Hinweis: Der theoretische Hintergrund auf den Sie sich in Analyseschritt 4 beziehen sollen, umfasst Kounins Techniken der Klassenführung. Halten Sie Ihre Gedanken für den jeweiligen Analyseschritt schriftlich in der Tabellenvorlage fest.*
+
+3. Laden Sie am Ende Ihrer Analyse Ihre ausgefüllte Tabelle unter der Aktivität "Videoanalyse: In den Savannen" im Innovation Space hoch und bereiten Sie sich auf eine fünf- bis siebenminütige Vorstellung Ihres Analyseprozesses vor.
+    - Legen Sie fest wer aus Ihrer Gruppe (max. 2 Personen) das Beispiel vorstellt. Beschreiben Sie in der Vorstellung was in dieser Situation passiert ist, wie Sie diese vor dem Hintergrund der Techniken nach Kounin erklären, welche Handlungsalternativen Sie sehen und wie Sie diese bewerten.
+
+[{{< fa exclamation >}}]{.imp2} Die Gruppenzusammensetzung dürfen Sie selbst entscheiden; tragen Sie ihre Gruppe in die Liste ein.
+
+
+::: 
+
+::: notes
+- Nutzergruppe: Lehramtsstudierende
+- Ort: Sonstige Universität
+- Suchbegriff: In den Savannen
+
+- nicht in Safari öffnen
+- Vorstellung in Großgruppe - jeweils 5-7 Minuten
+:::
+
+
+
+## Ihr Arbeitsauftrag - Teil 2 {{< fa pen >}}{.scrollable}
+
+> Nun hören wir uns Ihre Analysebeispiele an. Bitte beachten Sie, dass Sie als Gruppe jeweils 5 bis 7 Minuten Zeit für Ihre Vorstellung haben. Die Gruppen, die nicht vortragen, erhalten einen Beobachtungsauftrag, den  Sie den Kärtchen entnehmen können. Die Kärtchen werden für jede Runde neu verteilt.
+
+::: notes
+- 15 Minuten pro Präsentation (inklusive Feedback)
+
+:::
+
+
+# Classroom Management nach Evertson und Kolleg:innen {{< fa list-ol >}} {.cent1}
+
+## Classroom Management: Historische Entwicklung {{< fa arrow-rotate-left >}}
+
+::: {style="font-size: 0.45em"}
+
+__1. Classroom Management als reaktiver Umgang mit Störungen__
+
+- Mittelpunkt der Verantwortlichkeit: Lehrperson
+- Ziel: Disziplin zu erhalten und wiederherzustellen, um reibungsloses Lernen zu ermöglichen &rarr; Fokus auf Modifikation des individuellen Verhaltens 
+- Vorgehensweise: Verstärkung durch z.B. Belohnungen, Lob, Tadel und Sanktionen (Behaviourismus)
+ 
+__2. Classroom Management als proaktiver Umgang mit Störungen__
+
+- Wende durch Kounin Ende der 1970er
+- Mittelpunkt der Verantwortlichkeit: Lehrperson
+- Ziel: Prävention von Störungen &rarr; Fokus auf Lerngeschehen in der Gruppe
+ 
+__3. lernerzentriertes und präventives Classroom Management__
+
+- Wandel seit 1990er: großer Beitrag durch Evertson, Weinstein und Brophy 
+- Mittelpunkt der Verantwortlichkeit: Lehrperson und Schüler:innen
+- Ziel: Förderung der Selbständigkeit und Selbstregulation im Aneignen von Lernstoffen bei Schüler:innen; gemeinsame Verantwortung bei Konflikten
+ 
+:::
+
+::: notes
+- Auflistung müsste Ihnen bekannt vorkommen: historische Entwicklung vom __reaktiven CM über proaktives CM bis hin zum lernerzentrierten und präventives CM__
+- wenn Sie sich an Sitzung 3 erinnern, in der Sie die Techniken von Kounin kennengelernt haben, haben wir Kounins Arbeit unter 2. Klassenmanagement stärker proaktiv gestalten verortet
+
+::: 
+
+##  Classroom Management: Historische Entwicklung {{< fa arrow-rotate-left >}}
+
+::: {style="font-size: 0.45em"}
+
+__1. Classroom Management als reaktiver Umgang mit Störungen__
+
+ - Mittelpunkt der Verantwortlichkeit: Lehrperson
+ - Ziel: Disziplin zu erhalten und wiederherzustellen, um reibungsloses Lernen zu ermöglichen &rarr; Fokus auf Modifikation des individuellen Verhaltens 
+ - Vorgehensweise: Verstärkung durch z.B. Belohnungen, Lob, Tadel und Sanktionen (Behaviourismus)
+ 
+__2. Classroom Management als proaktiver Umgang mit Störungen__
+
+ - Wende durch Kounin Ende der 1970er
+ - Mittelpunkt der Verantwortlichkeit: Lehrperson
+ - Ziel: Prävention von Störungen &rarr; Fokus auf Lerngeschehen in der Gruppe
+ 
+[__3. lernerzentriertes und präventives Classroom Management__]{.imp2}
+
+ - [Wandel seit 1990er: großer Beitrag durch Evertson, Weinstein und Brophy]{.imp2}
+ - [Mittelpunkt der Verantwortlichkeit: Lehrperson und Schüler:innen]{.imp2}
+ - [Ziel: Förderung der Selbständigkeit und Selbstregulation im Aneignen von Lernstoffen bei Schüler:innen; gemeinsame Verantwortung bei Konflikten]{.imp2}
+
+:::
+
+::: notes
+
+- heute wollen wir noch einen anderen Klassiker kennnenlernen, der sich dem __lernerzentrieren CM__ zuordnen lässt: Evertson und Kolleg:innen
+- Wiederholung: Mittelpunkt ist nun nicht mehr alleinig die Lehrperson, sondern auch die Schüler:innen
+- neben der __Prävention von Störungen: Aufbau von Regeln und Ritualen und vor allem Selbständigkeit und Selbstregulation der SuS fördern__
+
+::: 
+
+##  Arbeitsweise von Evertson und Kolleg:innen {{< fa list-ol >}}
+
+::: {style="font-size: 0.8em"}
+
+* Carolyn M. Evertson amerikanische Psychologin
+* über 20 Jahre Forschungsarbeit (verschiedene Beobachtungsstudien) <br>
+
+[&rarr; 11 Merkmale von Classroom Management entwickelt, evaluiert und in ein Programm zur Unterstützung von Lehrkräften in effektivem Classroom Management (Classroom Organization & Management Program) überführt]{.imp2}
+
+
+
+:::
+
+::: notes
+- Beobachtungsstudien 
+- Trainingsprogramme (COMP) zum Classroom Management: insgesamt elf Punkte, die für ein gutes Classroom Management zu beachten sind
+
+:::
+
+##  Classroom Management <br> nach Evertson {{< fa list-ol >}} {.smaller}
+
+<center> 
+1. Klassenraum vorbereiten <br> 
+2. Regeln planen und Verfahrensweisen klar festlegen <br> 
+3. Konsequenzen festlegen <br>
+4. Unterbindung von unangemessenem Verhalten <br> 
+5. Regeln und Prozeduren unterrichten <br>
+6. Gemeinschaftsfördernde Aktivitäten <br>
+7. Strategien für eventuelle Probleme <br>
+8. Überwachen des Schüler:innenverhaltens <br> 
+9. Vorbereiten des Unterrichts <br>
+10. Verantwortlichkeit der Schüler:innen <br> 
+11. Unterrichtliche Klarheit <br> 
+
+
+</center> 
+
+::: notes
+- Hier eine Auflistung der Merkmale, in die Sie direkt mit Textarbeit tiefer einsteigen werden 
+
+- vorarb: __Merkmale nicht als isolierte Merkmale zu verstehen, sondern - so Evertson - alle von Lehrpersonen zu verwirklichen sind__
+- zentral für effektives CM ist hierbei, dass es um __proaktives Planen__ geht, 
+- es geht also primär darum __Strukturen so zu planen, dass Störungen möglichst verhindert werden__, nicht um das Handeln in der Situation
+
+
+:::
+
+---
+
+<!--
+## Ihr Arbeitsauftrag: Elaborationen der Merkmale nach Evertson {{< fa pen >}}{.scrollable}
+
+::: {style="font-size: 0.7em"}
+[__Think__]{.imp2} <br> 
+
+Lesen Sie sich den Textauszug von Haag & Streber (2020; S.74 unten - S.77 oben) durch. Den Textauszug finden Sie im Innovation Space unter "Evertson nach Haag und Streber (2020)". __Überlegen Sie sich mind. zwei Beispiele zu zwei Merkmalen.__ Beziehen Sie sich dabei *nicht* auf die ersten beiden Merkmale "Klassenraum vorbereiten" und "Regeln planen und Verfahrensweisen klar festlegen", da hierfür die Autor:innen Beispiele liefern. <br> *{{< fa clock >}} 10 Minuten*
+
+<br> 
+
+[__Pair__]{.imp2} <br> 
+
+Lassen Sie Ihre:n Sitznachbar:in Ihre Beispiele zu den möglichen Merkmalen zuordnen, d.h. stellen Sie Ihre Bespiele vor ohne dabei zu nennen, für welches Merkmal Sie dieses Beispiel gewählt haben. <br> *{{< fa clock >}} 7 Minuten* 
+
+<br>
+
+[__Share__]{.imp2} <br> 
+
+Kurze Reflexion Ihrer Einzel- und Partner:innenarbeit. <br> *{{< fa clock >}} 3 Minuten*
+:::
+
+
+::: notes
+
+bis " Auch müssen die genannten Techni- ken in ein unterstützendes und vertrauensvolles Klima eingebettet sein" lesen 
+
+
+1. __Klassenraum vorbereiten__: Staus und Störungen im Vorfeld vermeiden
+- Bsp. wie stelle ich meine Tische auf, um eine gute Kontrolle des Klassenraums zu haben
+
+2. __Regeln planen und Verfahrensweisen klar festlegen__: zu Schuljahresbeginn klar festlegen, was in der Klasse erlaubt, was verboten ist
+
+3. __Konsequenzen festlegen__: Belohnung und Bestrafungen für angemessenes und unangemessenes Verhalten einführen
+
+4. __Unterbindung von unangemessenem Verhalten__: Schüler:innenfehlverhalten sofort und konsistent unterbinden
+
+5. __Regeln und Prozeduren unterrichten__: im Laufe des Schuljahres immer wieder auf die festgelegten Regeln hinweisen; ggf. neue Regeln ergänzen
+
+6. __Gemeinschaftsfördernde Aktivitäten__: Aktivitäten wie Ausflüge, Spiele, gemeinsame Projekte zu Schuljahresbeginn um Zusammengehörigkeitsgefühl zu entwickeln
+
+7. __Strategien für eventuelle Probleme__: Strategien, wie man mit potenziellen Problemen umgeht, rechtzeitig planen
+  - z.B. Störungen des Unterrichts: Schulleitung kommt ins Zimmer und will ein dringendes Gespräch/Durchsagen
+  - Störungen durch Leerzeiten: Was machen Schüler:innen, die mit den Aufgaben fertig sind?
+  - Was passiert, wenn einige Schüler:innen die Aufgaben oder den Inhalt nicht verstehen??
+
+8. __Überwachen des Schülerverhaltens__: Schüler:innenaktivitäten und deren soziale Prozesse genau beobachten, um früh auftauchende Probleme zu identifizieren und die Wirksamkeit der eigenen Handlungen zu reflektieren
+
+9. __Vorbereiten des Unterrichts__: Unterricht gut vorbereiten, um unterschiedlich schwierige Lernaktivitäten für die heterogene Schüler:innenschaft zu ermöglichen
+
+10. __Verantwortlichkeit der Schüler__: Schüler:innen ihre Verantwortlichkeit für die Ergebnisse ihrer Arbeiten klarmachen, und sie dabei unterstützen, ihre Selbstwirksamkeit zu entwickeln
+
+11. __Unterrichtliche Klarheit__: Unterricht wird klar sturkturiert; dabei werden ausreichend redundante Informationen gegeben
+
+- Reflexion Ihrer Diskussion:
+  - was ist Ihnen besonders aufgefallen? positiv/negativ?
+  - waren Sie sich bei der Zuordnung einig?
+
+:::
+
+--> 
+---
+
+
+
+
+##  Peer Feedback zur Videoanalyse (Teil 2) {{< fa pen >}} {.smaller .scrollable}
+
+__Teil 1:__ <br>
+Lesen Sie sich den Textauszug von Haag & Streber (2020; S.74 unten - S.77 oben) durch. Den Textauszug finden Sie im Innovation Space unter "Evertson nach Haag und Streber (2020)". Schauen Sie sich Ihren Videoausschnitt nochmals an, den Sie heute morgen in Ihrer Gruppe vorgestellt haben. Analysieren Sie diesen Videoausschnitt erneut, indem Sie 
+
+* in Einzelarbeit
+* gemäß der Analyseschritte nach Syring (2017) und Kohler et al. (2015) auch die Classroom Management-Merkmale nach Evertson und Kolleg:innen berücksichtigen. D.h. Nehmen Sie Ihre in der Gruppe erstellte Tablle zur Hand und überarbeiten Sie die Schritte Erklären, Handlungsalternativen und ggf. Ihre Entscheidung.  
+* Laden Sie Ihre überarbeitete Tabelle in der Aktivität "Videoanalyse - Teil 2: In den Savannen (Peerfeedback)" in der Einreichungsphase hoch.
+
+
+::: notes
+
+- Reanalyse, dieses Mal aber in Einzelarbeit und nur ein Videoausschnitt
+
+
+15-MINUTEN PAUSE
+:::
+
+# Vielen Dank!{.cent1}
+
+::: notes
+
+Erinnerung Anmeldung im Metaportal
+
+:::
+
+## Literatur {.scrollable}
+
+Achilles, C. M., Bain, H. P., Bellot, F., Boyd-Zaharias, J., Finn, J., Folger, J., … Word, E. (1985). The state of Tennessee’s student/teacher achievement ratio (STAR) project (Technical Report). Tennessee State Department of Education. <br> 
+
+Berliner, D. C. (2005). The near impossibility of testing for teacher quality. Journal of Teacher Education, 56(3), 205–213. <br>
+
+Doyle, W. (2006). Ecological approaches to classroom management. In C. M. Evertson & C. S. Weinstein (Hrsg.), Handbook of Classroom Management (S. 97–125). Mahwah, NJ: Lawrence Erlbaum. <br>
+
+Drechsel, B., & Schindler, A.-K. (2019). Unterrichtsqualität. In D. Urhahne, M. Dresel, & F. Fischer (Hrsg.), Psychologie für den Lehrberuf (S. 353–372). Springer. https://doi.org/10.1007/978-3-662-55754-9_18 <br>
+
+Gold, B., & Syring, M. (2025). Klassenführung/Klassenmangagement. In M. Syring, T. Bohl, A. Gröschner, & A. Scheunpflug (Hrsg.). *Studienbuch Bildungswissenschaften 2. Unterricht und Schule gestalten.* https://doi.org/10.36198/9783838562193 <br> 
+
+Haag, L., & Streber, D. (2012). Klassenführung: Erfolgreich unterrichten mit Classroom Management. Beltz. <br>
+
+Habermas, J. (2014). Theorie und Praxis: Sozialphilosophische Studien (9. Aufl). Frankfurt am Main: Suhrkamp. <br>
+
+Kiel, E., Frey, A., & Weiß, S. (2013). Trainingsbuch Klassenführung. Verlag Julius Klinkhardt. <br>
+
+Kirk-Johnson, A., Galla, B. M., & Fraundorf, S. H. (2019). Perceiving effort as poor learning: The misinterpreted-effort hypothesis of how experienced effort and perceived learning relate to study strategy choice. Cognitive Psychology, 115, 101237. <br>
+
+Klieme, E. (2019). Unterrichtsqualität. In M. Harring, C. Rohlfs, & M. Gläser-Zikuda (Eds.), Handbuch Schulpädagogik (pp. 393–408). Waxmann. <br> 
+
+Kohler, B., Prinz, E., Schneider, J., & Syring, M. (2015). Ein neuer Blick auf die Praxis. Selbst- und Fremdreflexion mithilfe von Unterrichtsvideos. Schulmagazin, 5(10). 11-14.
+
+Kounin, J. S. (2006). Techniken der Klassenführung (M. Gellert & C. Gellert, Übers.). Waxmann. <br>
+
+Krammer, K., & Reusser, K. (2005). Unterrichtsvideos als Medium der Aus- und Weiterbildung von Lehrpersonen. Beiträge zur Lehrerbildung(23), 35–50. https://doi.org/10.25656/01:13561 <br>
+
+Kunter, M., & Trautwein, U. (2013). Psychologie des Unterrichts. Paderborn: UTB. <br>
+
+Massingham, P. (2019). An Aristotelian interpretation of practical wisdom: The case of retirees. Palgrave Communications, 5(1), 1–13. <br>
+
+Meyer, H. (2021). Was ist guter Unterricht? (15. Auflage). Berlin: Cornelsen. <br> 
+
+Pietsch, M. (2010). Evaluation von unterrichtsstandards. Zeitschrift Für Erziehungswissenschaft, 13(1), 121–148. <br>
+
+Praetorius, A. K., Klieme, E., Herbert, B., & Pinger, P. (2018). Generic dimensions of teaching quality: The German framework of three basic dimensions. Mathematics Education, 50(3), 407–426. <br>
+
+Rogowsky, B. A., Calhoun, B. M., & Tallal, P. (2015). Matching learning style to instructional method: Effects on comprehension. Journal of Educational Psychology, 107(1), 64–78. <br>
+
+Schneider, J. (2016). Lehramtsstudierende analysieren Praxis: Ein Vergleich der Effekte unterschiedlicher fallbasierter Lehr-Lern-Arrangements. Tübingen: Universität Tübingen. <br>
+
+Schwindt, K. (2008). Lehrpersonen betrachten Unterricht: Kriterien für die kompetente Unterrichtswahrnehmung. Waxmann. <br>
+
+Seidel, T. (2020.). Klassenführung. In E. Wild & J. Möller, J. (Hrsg.). Pädagogische Psychologie. Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61403-7 <br> 
+
+Seidel, T., & Shavelson, R. (2007). Teaching Effectiveness Research in the Past Decade: The Role of Theory and Research Design in Disentangling Meta-Analysis Results. Review of Educational Research, 77, 454–499. https://doi.org/10.3102/0034654307310317 <br>
+ 
+Slavin, R. E. (2010). Co-operative learning: What makes group-work work? In H. Dumont, D. Istance, & F. Benavides (Eds.), The nature of learning (pp. 161–178). Paris: OECD. <br>
+
+Syring, M. (2017). Classroom Management: Theorien, Befunde, Fälle - Hilfen für die Praxis. Vandenhoeck & Ruprecht.
+
+Syring, M., Reuschling, A., Bohl, T., Kleinknecht, M., Kuntze, S., & Rehm, M. (2013). Classroom-Management lehren und lernen. Zur Bedeutung des Konzepts im Unterricht und dessen Vermittlung in fallbasierten Seminaren in der Lehrerbildung (S. 75–91).
+
+
+## Classroom Management{.cent2}
+<center>
+<font color="#8cd000">3. Kompakttag</font>
+
+![](img/PHKA_logo.png){width="25%"}
+</center>
+
+<center>
+
+<br> 
+Dr. Eva Prinz  & Dr. Kirstin Schmidt <br> 
+
+::: {style="font-size: 0.8em"}
+Pädagogische Hochschule Karlsruhe <br>
+<font color="#50B32E">Wintersemester 2025/2026 </font>
+:::
+
+</center>
+
+::: notes
+* herzlich willkommen zum 3. Kompakttag
+
+:::
+
+## Geplante Pausen {{< fa mug-hot >}}
+
+> freiwählbare Pause zwischen 09:35 Uhr und 12:00 Uhr
+
+<br> 
+
+> Mittagspause von 12:00 Uhr bis 13:00 Uhr
+
+## Was erwartet Sie heute? {{< fa list-ol >}}
+
+* Classroom Management 
+    + Anwendung der Classroom Management-Merkmale nach Evertson (Fortsetzung)
+* Wahlvertiefung
+
+##  Peer Feedback zur Videoanalyse (Teil 2) {{< fa pen >}} {.smaller .scrollable}
+
+::: {style="font-size: 0.7em"}
+__Teil 1:__ <br>
+Lesen Sie sich den Textauszug von Haag & Streber (2020; S.74 unten - S.77 oben) durch. Den Textauszug finden Sie im Innovation Space unter "Evertson nach Haag und Streber (2020)". Schauen Sie sich Ihren Videoausschnitt nochmals an, den Sie heute morgen in Ihrer Gruppe vorgestellt haben. Analysieren Sie diesen Videoausschnitt erneut, indem Sie 
+
+* in Einzelarbeit
+* gemäß der Analyseschritte nach Syring (2017) und Kohler et al. (2015) auch die Classroom Management-Merkmale nach Evertson und Kolleg:innen berücksichtigen. D.h. Nehmen Sie Ihre in der Gruppe erstellte Tablle zur Hand und überarbeiten Sie die Schritte Erklären, Handlungsalternativen und ggf. Ihre Entscheidung.  
+* Laden Sie Ihre überarbeitete Tabelle in der Aktivität "Videoanalyse - Teil 2: In den Savnannen (Peerfeedback)" in der Einreichungsphase hoch.
+
+__Teil 2:__ <br>
+Sie erhalten zufällig eine Tabelle einer Kommilitonin / eines Kommilitonen (diese Ausarbeitung kann auch aus der anderen Seminargruppe stammen). Geben Sie nun anhand der vorgegebenen Fragen ein Feedback zur zugeteilten Analyse.
+
+
+:::
+
+::: notes
+
+- Reanalyse, dieses Mal aber in Einzelarbeit und nur ein Videoausschnitt
+
+
+15-MINUTEN PAUSE
+:::
+
+## Weitere Elaboration: <br> Kontrastierung Kounin & Evertson {{< fa wrench >}}
+::: {style="font-size: 0.50em"}
+| Unterrichtsgestaltung        | Beziehungsförderung                                    | Verhaltenssteuerung                                           |
+|-------------------------------------------|---------------------------------------------------|----------------------------------------------------------|
+| Flüssigkeit (Schwung; K)     | [gemeinschaftsfördernde Aktivitäten (E)]{.imp2} | Überlappung (K)                                               |
+| Sachmotivation (Überdrussvermeidung) (K)           | [Verantwortlichkeit der Schüler:innen (E)]{.imp2}               | Allgegenwärtigkeit (K)                                        |
+| Abwechslung (K)              |                                                        | Flüssigkeit (Schwung; K)                                      |
+| [Unterrichtliche Klarheit (E)]{.imp2} |                                                        | Gruppenmobilisierung (K)                                      |
+| [Klassenraum vorbereiten (E)]{.imp2}         |                                                        | [Regeln und Verfahrensweisen planen (E)]{.imp2}                              |
+| [Unterricht vorbereiten (E)]{.imp2}   |                                                        | [Regeln und Verfahrensweisen unterrichten (E)]{.imp2}                        |
+|                              |                                                        | [Strategien für eventuelle Probleme (E)]{.imp2}                        |
+|                              |                                                        | [Überwachen des Schüler:innenverhalten (E)]{.imp2} |
+|                              |                                                        | [Unangemessenes Schüler:innenverhalten unterbinden (E)]{.imp2}         |
+|                              |                                                        | [Konsequenzen festlegen (E)]{.imp2}                                    |
+
+
+
+(angelehnt an Syring et al., 2013b; Syring, 2017) 
+
+:::
+
+::: notes
+ 
+- Sie haben die Merkmale weiter elaboriert, indem Sie sich Beispiele überlegt, zugeordnet und diskutiert haben
+- ich zeige Ihnen jetzt noch wie man Kounin und Evertson einander gegenüberstellen kann 
+  - Zusammenhänge zu erkennen und Vergleiche sichtbar machen
+  - eine Heuristik, es gibt ganz unterschiedliche Möglichkeiten
+- in schwarz die Techniken nach Kounin abgetragen, in grün die Merkmale nach Evertson
+  - Heuristik könnte auch um weitere Ansätze ergänzt werden
+- drei Dimensionen von CM zuteilen:
+  - __Unterrichtsgestaltung__: Handeln der Lehrperson, welches das __aktive Lernen__ und die aktive __Partizipation der Schüler:innen__ anregt
+  - Beziehungsförderung: __fürsorgliche und vertrauensvolle__ Beziehung zwischen Lehrperson und Schüler:innen
+  - Verhaltenssteuerung: __Ordnungs- und Interaktionsstrukturen__ errichten und aufrechterhalten 
+- Evertson allen drei Dimensionen zugeordnet werden kann, sind die Techniken von Kounin bei Unterrichtsgestaltung und Verhaltenssteuerung einzuordnen, wenn auch nicht eindeutig einer Dimension (z.B. Flüssigkeit und Schwung)
+- Beziehungsförderung nur von Evertson in den Blick genommen, __erweitert also das Verständnis um die soziale Dimension__
+
+
+weitere Differenzierung:
+
+- während sich die Techniken von __Kounin als »konstruktives Agieren«__ beschreiben/zusammenfassen lassen
+  - Kounin häufig das Handeln in der Unterrichtssituation 
+  - z.B. Allgegenwärtigkeit, Überlappung, Reibungslosigkeit und Schwung
+- könnnen die __Merkmale nach Evertson und Kolleg:innen als »vorausplanendes Handeln«__ verstanden werden   
+  - Aktivitäten zu Beginn des Schuljahres, Regeln und Verfahrensweisen, Raum vorbereiten, Unterricht vorbereiten
+- CM also mehr als nur Disziplinierung
+
+- falls noch Zeit: Rückfragen?
+
+ 15-MINUTEN PAUSE
+::: 
+
+
+## Weiterführende Literatur
+
+Zusammenfassung des aktuellen Forschungsstandes rund um Classroom Management finden Sie hier: 
+
+> Gold, B., & Syring, M. (2025). Klassenführung/Klassenmangagement. In M. Syring, T. Bohl, A. Gröschner, & A. Scheunpflug (Hrsg.). *Studienbuch Bildungswissenschaften 2. Unterricht und Schule gestalten.* https://doi.org/10.36198/9783838562193
+
+---

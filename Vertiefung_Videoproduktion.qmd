@@ -1,0 +1,230 @@
+---
+format:
+  revealjs:
+    auto-stretch: true
+    self-contained: false
+    controls: true
+    slide-number: c/t
+    logo: img/PH_logo.svg
+    theme: [simple, css/custom.scss]
+    fullscreen: true
+    pdf-separate-fragments: true
+    pdfexport: true
+bibliography: references.bib
+csl: apa.csl
+editor_options: 
+  chunk_output_type: console
+lightbox: true
+---
+
+```{r hidden chunk which creates template stuff}
+#| echo: false
+
+## in terminal ########
+# quarto install extension quarto-ext/fontawesome
+# quarto install extension schochastics/academicons
+# test
+
+########################
+library(fontawesome)
+library(tidyverse)
+library(readxl)
+library(ggalt)
+library(hrbrthemes)
+library(reactable)
+
+# Change css to PH green
+if(!dir.exists("css"))
+dir.create("css")
+fileConn<-file("css/custom.scss")
+fileStyle<-file("css/custom.scss")
+writeLines(c("/*-- scss:defaults --*/",
+             "$link-color: #8cd000 !default;",
+             # line-height muss im parent der font-size gesetzt werden,
+             # daher hier und nicht inline im YAML header
+             ".reveal h1 {line-height: .8 !important;} ", 
+             # make citations a bit smaller
+             ".citation {font-size: .8em; color: #8cd000;}",
+             ".imp {color: #8cd000;}",
+             ".imp2 {color: #50B32E;}",
+             ".cent2 h2 {text-align: center;}",
+             ".cent3 h3 {text-align: center;}",
+             ".cent1 h1 {text-align: center;}",
+             ".cent_text {text-align: center;}",
+             ".reveal h2 {color: #8cd000 !important;}"),
+           fileConn)
+close(fileConn)
+close(fileStyle)
+```
+
+## Classroom Management{.cent2}
+<center>
+<font color="#8cd000">Wahlvertiefung: Videoproduktion </font>
+
+![](img/PHKA_logo.png){width="25%"}
+</center>
+
+<center>
+
+<br>  Dr. Kirstin Schmidt <br> 
+
+::: {style="font-size: 0.8em"}
+Pädagogische Hochschule Karlsruhe <br>
+<font color="#50B32E">Wintersemester 2025/2026</font>
+:::
+
+</center>
+
+::: notes
+
+:::
+
+## Videoproduktion
+
+* Anforderungen an das Produkt
+* Technische Möglichkeiten
+* Organisatorische Vorgehensweise
+
+::: notes
+- heute: Einführung in die Videoproduktion
+	- alle organisatorischen Fragen klären - was zu tun ist, wie das Ganze ablaufen wird etc.
+
+:::
+
+## Lernziele {{< fa bullseye >}}
+
+Merkmale des Classroom Managements nach Evertson und Kolleg:innen kennen und anwenden können 
+
+
+
+## Videoproduktion: Anforderungen an das Produkt {.smaller .scrollable}
+
+* Sie produzieren ein Video, in welchem Sie 
+    + sich mindestens auf einen Ihrer Fälle beziehen und eine Handlungsalternative im Sinne der Classroom Management Merkmale nach Kounin oder Evertson exemplarisch demonstriert ... und ...
+    + sich mindestens eine weitere Situation überlegen, in der ein Classroom Management Merkmale nach Kounin oder Evertson (in positiver oder negativer Ausführung) inszeniert wird
+    
+* Das Video dauert ca. 3 Minuten bis max. 5 Minuten
+* Das Video wird auf Grundlage eines detaillierten Skripts eingesprochen
+* Die Hauptrollen im Video werden von der jeweiligen Gruppe selbst bestritten; Nebenrollen übernehmen Ihre Kommiliton:innen, d.h. alle spielen in allen Videos mit
+* Erstellen Sie zwei Skriptversionen
+  + Variante 1: Infos anführen, an welcher Stelle Sie welche Merkmale der Klassenführung darstellen 
+  + Variante 2: verblindet, d.h. hier erwähnen Sie *nicht* welche Klassenführungstechnik(en) Sie darstellen. 
+
+
+::: notes
+
+- nun zur Videoproduktion
+- Video, das mind. eine der Klassenführungstechniken nach Kounin oder CM Merkmale nach Evertson exemplarisch demonstriert
+	- schulische oder hochschulische Unterrichtssituation
+	- Positiv- oder Negativbeispiel möglich
+	- Zeitmanagement hier ist wirklich sehr wichtig!
+- Video wird auf Grundlage eines detaillierten Skripts eingesprochen
+- Hauptrollen im Video werden natürlich von der jeweiligen Gruppe selbst gespielt
+
+::: 
+
+    
+## Was ist im Skript enthalten
+* Aufbau des Raumes (ggfs. Skizze) LLZ in Gebäude 2
+* Position und Bewegungen der Personen
+* Genutzte und ungenutzte Gegenstände der Personen
+* Wortlaut der Äußerungen und Angabe deren Qualität (laut, leise, ärgerlich, flüsternd)
+* Zeitlicher Ablauf aller zuvor genannten Punkte
+
+::: notes
+- Tipps was alles im Skript nötig ist
+- wie auch bei der Videoanalyse, Skripten asynchron
+	- Möglichkeit Ihr Skript im Vorfeld kurz durchzuschauen
+
+- Zeitlicher Ablauf: also wann soll jemand wie reagieren/was sagen/welche Bewegung machen
+
+- sicher auch Punkte, an die wir nicht gedacht haben
+:::
+
+
+## Rahmenbedingungen {.smaller}
+* Sie arbeiten in einer 4er-Gruppe (ggf. eine 5er-Gruppe)
+* Sie haben zur Fertigstellung des Skripts, zum Proben und Vorbereiten des Briefings bis morgen (Donnerstag, 14.08.) um 09:30 Uhr Zeit. Anschließend starten wir mit den Aufnahmen. 
+* Es gibt ein Ipad als Mikrofon und bei Bedarf kann zusätzlich ein Handy oder Tablet als zusätzliches Mikrofon genutzt werden.
+* Es gibt eine zentrale Kameraperspektive (weitere können gerne eigenständig eingebracht werden), die im hinteren oberen Teil des Raumes positioniert ist.
+* Merken Sie sich die räumlichen Gegebenheiten, Sie haben 3 Minuten für eventuelles Umbauen Zeit
+
+
+## Ablauf der Aufnahmetage {.smaller}
+* Gruppe baut Raum um (max. 3 Minuten)
+* Briefing (5 Minuten)
+  * Gruppe verteilt die Skripte an Kommiliton:innen
+  * Gruppe verteilt Rollen und brieft die Kommiliton:innen bzgl. dieser entlang des Skripts
+* Take I (max. 5 Minuten)
+* Verbesserungsvorschläge an die Rollen (2 Minuten)
+* Take II (max. 5 Minuten)
+
+::: notes
+
+- Wie wird dann die Aufnahme konkret ablaufen?
+	- zunächst baut die Gruppe den Raum so um, dass es zur ihrem Skript passt - hierfür maximal 5 Minuten Zeit
+	- dann weitere 5 Minuten, um Ihre Kommiliton:innen zu briefen
+		- Sie verteilen die Skripte an ihre Kommiliton:innen
+		- verteilen die jeweiligen Rollen und briefen dann anhand des ausgeteilten Skripts
+	- Sie haben insgesamt 2 Takes, das folgendermaßen ablaufen wird
+		- sobald Sie mit dem Briefing fertig sind, wird Take I aufgenommen - hierfür haben Sie maximal 8 Minuten Zeit
+		- Nochmals 4 Minuten Zeit Verbesserungsvorschläge an die Rollen zu geben oder weitere "Problemchen" zu klären
+		- 8 Minuten für Take II
+
+::: 
+
+
+## Verantwortlichkeiten {.smaller}
+* Dozierende:
+    * Aufnahmetechnik
+* Studierende:
+    * Skripte - Skripte (verblindet und nicht verblindet) per Mail an kirstin.schmidt@ph-karlsruhe.de (eine Mail je Gruppe ist ausreichend). Verweisen Sie in der Mail zudem darauf, auf welchen Fall Sie sich beziehen
+    * Rolleneinteilung
+    * notwendige Gegenstände
+    * Briefing
+    * __Zeiteinhaltung!__ 
+    
+::: notes
+
+- und hier nochmal die Verantwortlichkeiten zusammengefasst
+	- Herr Merk und ich sind für die Aufnahmetechnik zuständig, bedienen Video etc.
+	- Sie als Gruppe sind für die Skripte, Rollenzuteilung, das Briefing und vor allem auch ganz wichtig die Zeiteinhaltung zuständig
+		- Sie haben als Gruppe maximal 30 Minuten Zeit - hier gibt es keinen Spielraum, nach 30 Minuten muss abgebrochen werden
+	
+::: 
+
+
+## Tipps für die Skript-Entwicklung {.smaller}
+::: {.incremental}
+* Formulieren Sie zunächst mündlich und verschriftlichen Sie danach. Schriftsprache und mündliche Sprache unterscheiden sich stilistisch deutlich 
+* Lesen Sie sich die Formulierungen *laut* vor
+* Lesen Sie die Skripte mit verteilten Rollen
+* Spielen Sie die Skripte mehrfach durch, um die Einhaltung der Zeitvorgaben sicherzustellen
+* Stellen Sie in regelmäßigen Abständen den Bezug des Skripts zur Literatur (Kounin/Evertson) sicher
+
+:::
+
+
+::: notes
+
+Beispiel zeigen
+
+
+:::
+
+
+# Viel Spaß beim Skripten <br> 😊{.cent1}
+
+::: notes
+
+Studienleistung
+
+:::
+
+
+<style>
+div.callout {border-left-color: #8cd000 !important;}
+div.callout-tip.callout-style-default .callout-title {
+    background-color: #8cd000;
+}
+</style>
