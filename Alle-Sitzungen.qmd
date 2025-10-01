@@ -1323,7 +1323,7 @@ Handlungsalternativen startet mit dem Handeln d. Lehrperson
 
 Erklären Ursachen und Konsequenzen 
 
-5-Minuten PAUSE
+TABELLE ZEIGEN
 
 :::
 
@@ -1347,6 +1347,8 @@ Erklären Ursachen und Konsequenzen
 
 ::: notes
 
+JE NACH ZEIT: nur die erste Handlungsalternative der Lehrperson, oder noch eine weitere Handlungsalternative analysieren
+
 <!-- 
 - Fragmentierung - Schwung
 - etwas später beim Lied starten 
@@ -1366,7 +1368,7 @@ Erklären Ursachen und Konsequenzen
 - HA: Digitalisierung z.B. PPP mit AA verwenden -> eine mögliche Handlungsalternative, die aber keine weiteren / anderen Techniken der Klassenführung adressiert. 
 --> 
 
-20-MINUTEN PAUSE
+15-MINUTEN PAUSE
 ::: 
 
 
@@ -1696,33 +1698,33 @@ Pädagogische Hochschule Karlsruhe <br>
 
 :::
 
-## Geplante Pausen {{< fa mug-hot >}}
-
-> freiwählbare Pause zwischen 09:35 Uhr und 12:00 Uhr
-
-<br> 
-
-> Mittagspause von 12:00 Uhr bis 13:00 Uhr
-
 ## Was erwartet Sie heute? {{< fa list-ol >}}
 
 * Classroom Management 
     + Anwendung der Classroom Management-Merkmale nach Evertson (Fortsetzung)
 * Wahlvertiefung
 
-##  Peer Feedback zur Videoanalyse (Teil 2) {{< fa pen >}} {.smaller .scrollable}
+## Videoanalyse: In den Savannen (Part 2) {{< fa pen >}} {.smaller .scrollable}
 
 ::: {style="font-size: 0.7em"}
-__Teil 1:__ <br>
-Lesen Sie sich den Textauszug von Haag & Streber (2020; S.74 unten - S.77 oben) durch. Den Textauszug finden Sie im Innovation Space unter "Evertson nach Haag und Streber (2020)". Schauen Sie sich Ihren Videoausschnitt nochmals an, den Sie heute morgen in Ihrer Gruppe vorgestellt haben. Analysieren Sie diesen Videoausschnitt erneut, indem Sie 
+1. Schauen Sie sich Ihren Videoausschnitt nochmals an, den Sie heute morgen in Ihrer Gruppe vorgestellt haben. Analysieren Sie diesen Videoausschnitt erneut, indem Sie 
 
 * in Einzelarbeit
-* gemäß der Analyseschritte nach Syring (2017) und Kohler et al. (2015) auch die Classroom Management-Merkmale nach Evertson und Kolleg:innen berücksichtigen. D.h. Nehmen Sie Ihre in der Gruppe erstellte Tablle zur Hand und überarbeiten Sie die Schritte Erklären, Handlungsalternativen und ggf. Ihre Entscheidung.  
-* Laden Sie Ihre überarbeitete Tabelle in der Aktivität "Videoanalyse - Teil 2: In den Savnannen (Peerfeedback)" in der Einreichungsphase hoch.
+* gemäß der Analyseschritte nach Syring (2017) und Kohler et al. (2015) (vgl. F.46) auch die Classroom Management-Merkmale nach Evertson und Kolleg:innen berücksichtigen. D.h. Nehmen Sie Ihre in der Gruppe erstellte Tablle zur Hand und überarbeiten Sie die Schritte Erklären, Handlungsalternativen und ggf. Ihre Entscheidung.  
+* Laden Sie Ihre überarbeitete Tabelle in der Aktivität "Part 2: In den Savannen" hoch.
 
-__Teil 2:__ <br>
-Sie erhalten zufällig eine Tabelle einer Kommilitonin / eines Kommilitonen (diese Ausarbeitung kann auch aus der anderen Seminargruppe stammen). Geben Sie nun anhand der vorgegebenen Fragen ein Feedback zur zugeteilten Analyse.
+<center> 10 Minuten {{< fa clock >}} </center>
 
+2.	Treffen Sie sich mit einer Kommilitonin / einem Kommilitonen aus Ihrer Analysegruppe von gestern. Vergleichen Sie Ihre Überarbeitungen: Haben Sie sich auf die gleichen / verschiedene Merkmale von Evertson und Kolleg:innen bezogen? Haben Sie weitere Handlungsalternativen entwickelt? Sind sie zu einer anderen Entscheidung gekommen? Bitte stellen Sie sich Ihre Ausarbeitungen gegenseitig vor, diskutieren und ergänzen ggf. Ihre eigene Analyse.
+
+<center> 15 Minuten {{< fa clock >}} </center>
+
+3.	Nun kommen Sie in neu zugeteilten Gruppen zusammen, in der jeweils ein Mitglied der Analysegruppen von gestern vertreten ist. 
+Wählen Sie gemeinsam eine bereits von Ihnen in der Gruppe selektierte Sequenz aus. Schauen Sie sich bei Bedarf gerne nochmals die Videosequenz an. 
+Beraten und entwickeln Sie in der Gruppe weitere Handlungsalternativen. Greifen Sie dabei auch auf Ihre Erfahrung in Praktika, dem ISP, Beobachtungen in Ihrer eigenen Schulzeit und in Hospitationen, etc. zurück.
+Teilen Sie danach Ihre gemeinsame Analyse. 
+
+<center> 25 Minuten {{< fa clock >}} </center>
 
 :::
 
@@ -1733,6 +1735,7 @@ Sie erhalten zufällig eine Tabelle einer Kommilitonin / eines Kommilitonen (die
 
 15-MINUTEN PAUSE
 :::
+
 
 ## Weitere Elaboration: <br> Kontrastierung Kounin & Evertson {{< fa wrench >}}
 ::: {style="font-size: 0.50em"}

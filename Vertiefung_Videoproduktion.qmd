@@ -100,10 +100,10 @@ Merkmale des Classroom Managements nach Evertson und Kolleg:innen kennen und anw
 ## Videoproduktion: Anforderungen an das Produkt {.smaller .scrollable}
 
 * Sie produzieren ein Video, in welchem Sie 
-    + sich mindestens auf einen Ihrer Fälle beziehen und eine Handlungsalternative im Sinne der Classroom Management Merkmale nach Kounin oder Evertson exemplarisch demonstriert ... und ...
+    + sich mindestens auf einen Ihrer Fälle beziehen und eine Handlungsalternative im Sinne der Classroom Management Merkmale nach Kounin oder Evertson exemplarisch demonstriert. Diese Handlungsalternative soll nicht der im Fall gewählten Handlungsalternative entsprechen. ... und ...
     + sich mindestens eine weitere Situation überlegen, in der ein Classroom Management Merkmale nach Kounin oder Evertson (in positiver oder negativer Ausführung) inszeniert wird
     
-* Das Video dauert ca. 3 Minuten bis max. 5 Minuten
+* Das Video dauert ca. 5 Minuten bis max. 7 Minuten
 * Das Video wird auf Grundlage eines detaillierten Skripts eingesprochen
 * Die Hauptrollen im Video werden von der jeweiligen Gruppe selbst bestritten; Nebenrollen übernehmen Ihre Kommiliton:innen, d.h. alle spielen in allen Videos mit
 * Erstellen Sie zwei Skriptversionen
@@ -143,21 +143,24 @@ Merkmale des Classroom Managements nach Evertson und Kolleg:innen kennen und anw
 
 
 ## Rahmenbedingungen {.smaller}
-* Sie arbeiten in einer 4er-Gruppe (ggf. eine 5er-Gruppe)
-* Sie haben zur Fertigstellung des Skripts, zum Proben und Vorbereiten des Briefings bis morgen (Donnerstag, 14.08.) um 09:30 Uhr Zeit. Anschließend starten wir mit den Aufnahmen. 
-* Es gibt ein Ipad als Mikrofon und bei Bedarf kann zusätzlich ein Handy oder Tablet als zusätzliches Mikrofon genutzt werden.
-* Es gibt eine zentrale Kameraperspektive (weitere können gerne eigenständig eingebracht werden), die im hinteren oberen Teil des Raumes positioniert ist.
-* Merken Sie sich die räumlichen Gegebenheiten, Sie haben 3 Minuten für eventuelles Umbauen Zeit
+* Sie arbeiten in einer 5er-Gruppe
+* Sie haben zur Fertigstellung des Skripts, zum Proben und Vorbereiten des Briefings bis ca. 14:00 Uhr (inkl. Mittagspause) Zeit. Anschließend starten wir mit den Aufnahmen.
+* Es gibt ein Raummikrofon und bei Bedarf können Sie Ihr Handy oder Tablet als zusätzliches Mikrofon nutzen.
+* Es gibt eine zentrale Kameraperspektive, die im hinteren oberen Teil des Raumes positioniert ist.
+* Merken Sie sich die räumlichen Gegebenheiten LLZ (2.B308), Sie haben 3 Minuten für eventuelles Umbauen Zeit
 
 
 ## Ablauf der Aufnahmetage {.smaller}
-* Gruppe baut Raum um (max. 3 Minuten)
-* Briefing (5 Minuten)
+
+> Für jeden Videodreh haben wir insgesamt 30 Minuten Zeit
+
+* Gruppe baut Raum um (max. 4 Minuten)
+* Briefing (6 Minuten)
   * Gruppe verteilt die Skripte an Kommiliton:innen
   * Gruppe verteilt Rollen und brieft die Kommiliton:innen bzgl. dieser entlang des Skripts
-* Take I (max. 5 Minuten)
-* Verbesserungsvorschläge an die Rollen (2 Minuten)
-* Take II (max. 5 Minuten)
+* Take I (max. 7 Minuten)
+* Verbesserungsvorschläge an die Rollen (6 Minuten)
+* Take II (max. 7 Minuten)
 
 ::: notes
 
@@ -178,7 +181,7 @@ Merkmale des Classroom Managements nach Evertson und Kolleg:innen kennen und anw
 * Dozierende:
     * Aufnahmetechnik
 * Studierende:
-    * Skripte - Skripte (verblindet und nicht verblindet) per Mail an kirstin.schmidt@ph-karlsruhe.de (eine Mail je Gruppe ist ausreichend). Verweisen Sie in der Mail zudem darauf, auf welchen Fall Sie sich beziehen
+    * Skripte - Skripte (verblindet und nicht verblindet) in zwei separten Dokumenten per Mail an kirstin.schmidt@ph-karlsruhe.de (eine Mail je Gruppe ist ausreichend). Verweisen Sie in der Mail zudem darauf, auf welchen Fall Sie sich beziehen
     * Rolleneinteilung
     * notwendige Gegenstände
     * Briefing
@@ -214,6 +217,11 @@ Beispiel zeigen
 
 
 # Viel Spaß beim Skripten <br> 😊{.cent1}
+
+
+## Beispielskript
+
+{{< pdf img/Beispielskript.pdf width=100% height=800 >}}
 
 ::: notes
 
